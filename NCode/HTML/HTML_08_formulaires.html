@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/github-markdown.css" />
+    <link rel="stylesheet" href="/css/menu-markdown.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="/highlight.js/styles/stackoverflow-dark.min.css"
+    />
+    <script src="/highlight.js/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="markdown-body">
+        <h1>HTML - 08 - Formulaires</h1>
+        <p>
+          Les formulaires permettent à l'internaute d'effectuer une saisie et
+          d'envoyer les informations saisies vers le serveur web afin d'y être
+          traitées par un langage côté serveur.
+        </p>
+        <p>Les saisies dans un formulaire peuvent s'effectuer par :</p>
+        <ul>
+          <li>des champs de saisie de texte,</li>
+          <li>des zones de texte multilignes,</li>
+          <li>des listes de choix (listes déroulantes),</li>
+          <li>
+            des cases à cocher (checkbox) pour des choix multiples de réponses,
+          </li>
+          <li>des boutons radio, pour un choix unique de réponse,</li>
+          <li>il est aussi possible de télécharger un fichier</li>
+        </ul>
+        <h2>Structure d'un formulaire</h2>
+        <h3>Déclaration d'un formulaire</h3>
+        <p>
+          Un formulaire s'ouvre avec la balise <code>&lt;form&gt;</code> et se
+          termine par <code>&lt;/form&gt;</code> :
+        </p>
+        <p><strong>Exemple :</strong></p>
+        <pre><code>&lt;form&gt;
+
+&lt;/form&gt;</code></pre>
+        <p>
+          La balise <code>&lt;form&gt;</code> possède obligatoirement l'attribut
+          <code>action</code>. D'autres attributs sont facultatifs.
+        </p>
+        <pre><code>&lt;form action="destination.php" method="post" id="formulaire_contact"&gt; 
+
+&lt;/form&gt;</code></pre>
+        <p><strong>Explications :</strong></p>
+        <table>
+          <thead>
+            <tr>
+              <th>Attribut</th>
+              <th>Utilité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>action</td>
+              <td>
+                Indique le nom (chemin/url) du fichier qui sera exécuté lors de
+                l'envoi du formulaire.<br />
+                <br />
+                Ce fichier de destination recevra et traitera les données :
+                contrôles des informations saisies, enregistrement en base de
+                données... Ce fichier sera écrit dans un langage côté serveur
+                (PHP, ASP...).
+              </td>
+            </tr>
+            <tr>
+              <td>method</td>
+              <td>
+                L'attribut `method` est facultatif. Il peut recevoir 2 valeurs
+                :<br />
+                <br />
+                * `GET` : les données saisies sont ajoutées à l'url. Lorsque
+                l'attribut `method` est absent (puisque facultatif), la valeur
+                par défaut est `GET`. L'utilisation de cette valeur est à éviter
+                pour des questions de sécurité.<br />
+                <br />
+                * `POST` : les données saisies dans le formulaire n'apparaissent
+                pas dans l'url.
+                <strong>L'utilisation de cette valeur est recommandée.</strong
+                ><br />
+              </td>
+            </tr>
+            <tr>
+              <td>`accept`</td>
+              <td>
+                Permet de n'autoriser que certains types (MIME) de fichiers (ne
+                constitue en rien une sécurité).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Champs de saisie</h3>
+        <p>
+          A l'intérieur de la balise <code>&lt;form&gt;</code>, on place tout le
+          code permettant la saisie de données : champs textes (balises
+          <code>&lt;input&gt;</code>, listes déroulantes... cf. plus loin dans
+          ce cours).
+        </p>
+        <p><strong>Exemple :</strong></p>
+        <pre><code>&lt;form action="destination.php" method="post"&gt; 
+&lt;input type="text" name="nom"&gt; 
+&lt;input type="text" name="prenom"&gt; 
+&lt;/form&gt;</code></pre>
+        <p>
+          Ces balises font apparaître les zones dans lesquelles l'internaute
+          pourra saisir du texte/effectuer des choix.
+        </p>
+        <p>Il existe plusieurs types de champs, cf. plus loin dans ce cours.</p>
+        <h3>Soumission du formulaire</h3>
+        <p>
+          Pour envoyer - on dit aussi soumettre ou poster - un formulaire, il
+          faut en dernier c'est-à-dire avant la balise de fermeture
+          <code>&lt;/form&gt;</code> un champ spécifique dont le type possède la
+          valeur <code>submit</code> :
+        </p>
+        <p><strong>Exemple :</strong></p>
+        <pre><code>&lt;form action="destination.php" method="post"&gt; 
+&lt;input type="text" name="nom"&gt; 
+&lt;input type="text" name="prenom"&gt; 
+&lt;input type="submit" value="Envoyer"&gt; 
+&lt;/form&gt;</code></pre>
+        <blockquote>
+          <p>
+            Ce type de champ peut être remplacé par un bouton avec un attribut
+            type qui a la valeur <code>submit</code>:
+            <code>&lt;button type="submit"&gt;Envoyer&lt;/button&gt;</code>.
+          </p>
+        </blockquote>
+        <h2>Les types de champs</h2>
+        <h3>Champs de saisie de texte</h3>
+        <p>
+          L'internaute peut saisir une information dans un champ de saisie par
+          l'intermédiaire de la balise <code>&lt;input type="text"&gt;</code>.
+        </p>
+        <p><strong>Exemple :</strong></p>
+        <pre><code>&lt;label for="nom"&gt;Nom:&lt;/label&gt;&lt;input type="text" name="nom" id="nom"&gt;</code></pre>
+        <p>
+          Affiche : <label for="nom">Nom:</label
+          ><input type="text" name="nom" id="nom" />
+        </p>
+        <blockquote>
+          <p>
+            En HTML 5, la balise <code>&lt;input&gt;</code> ne nécessite pas de
+            slash de fermeture : <code>&lt;input type="text"...&gt;</code> et
+            non <code>&lt;input type="text" /&gt;</code>.
+          </p>
+        </blockquote>
+        <p>
+          La balise <code>&lt;input&gt;</code> possède les attributs principaux
+          suivants : seuls les attributs <code>type</code> et
+          <code>name</code> sont obligatoires.
+          <strong
+            >Si l'attribut name est manquant pour un champ, les données saisies
+            dans ce champ ne seront pas transmises au fichier de
+            destination</strong
+          >.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Attribut</th>
+              <th>Caractère</th>
+              <th>Utilité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>`type`</td>
+              <td>Obligatoire</td>
+              <td>
+                Le type de champ. Les valeurs possibles (text, radio...) pour
+                cet attribut sont évoquées ci-après.
+              </td>
+            </tr>
+            <tr>
+              <td>`name`</td>
+              <td>Obligatoire</td>
+              <td>
+                Nom de la donnée. C’est le nom sous lequel l’information saisie
+                ici sera connue et récupérée dans le script serveur déclenché
+                par le formulaire.
+              </td>
+            </tr>
+            <tr>
+              <td>`value`</td>
+              <td>Facultatif</td>
+              <td>Texte définit comme valeur par défaut.</td>
+            </tr>
+            <tr>
+              <td>`size`</td>
+              <td>Facultatif</td>
+              <td>
+                Permet de définir un nombre de caractère visible pour le champ.
+              </td>
+            </tr>
+            <tr>
+              <td>`maxlength`</td>
+              <td>Facultatif</td>
+              <td>
+                Permet de définir un nombre de caractère maximum saisissable.
+              </td>
+            </tr>
+            <tr>
+              <td>`autocomplete`</td>
+              <td>Facultatif</td>
+              <td>
+                Active l'autocomplétion du champ (par rapport aux saisies
+                effectuées précédem-ment dans le navigateur (cache) pour le même
+                champ. Cet attribut peut recevoir de [nombreuses
+                valeurs](https://developer.mozilla.org/fr/docs/Web/HTML/Attributs/autocomplete#Valeurs))
+              </td>
+            </tr>
+            <tr>
+              <td>`autofocus`</td>
+              <td>Facultatif</td>
+              <td>
+                Donne la priorité (focus) au champ lors du chargement du
+                formulaire (c’est-à-dire que le curseur sera positionné
+                directement dans le champ).
+              </td>
+            </tr>
+            <tr>
+              <td>`readonly`</td>
+              <td>Facultatif</td>
+              <td>
+                Met le champ en lecture seule, aucune saisie ne sera possible..
+              </td>
+            </tr>
+            <tr>
+              <td>`disabled`</td>
+              <td>Facultatif</td>
+              <td>
+                Désactive le champ, aucune interaction possible (ni saisie ni
+                évènements).
+              </td>
+            </tr>
+            <tr>
+              <td>`placeholder`</td>
+              <td>Facultatif</td>
+              <td>
+                affiche (grisé) un texte d'indication qui s'effacera lors de la
+                saisie du premier caractère.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Exemple avec les différents attributs :</strong></p>
+        <pre><code class="language-html">&lt;label for="nom"&gt;Nom:&lt;/label&gt;&lt;input type="text" name="nom" id="nom" size="50" maxlength="50" value="Dave LOPER"&gt;</code></pre>
+        <p>
+          Affiche : <label for="">Nom:</label
+          ><input
+            type="text"
+            name="nom"
+            id="nom"
+            size="50"
+            maxlength="50"
+            value="Dave LOPER"
+          />
+        </p>
+        <p>
+          Ici, <em>Dave LOPER</em> s'affiche par défaut dans le champ car cette
+          valeur est prérenseignée dans l'attribut <code>value</code>.
+        </p>
+        <blockquote>
+          <p>
+            Il existe de nombreux
+            <a href="https://www.w3schools.com/tags/tag_input.asp"
+              >autres attributs</a
+            >
+            applicables à la balise <code>&lt;input&gt;</code> mais il convient
+            de s'assurer de leur compatibilité avec les navigateurs.
+          </p>
+        </blockquote>
+        <h2>Zones de saisie multi-lignes</h2>
+        <p>
+          Lorsque l'on veut saisir du texte sur plusieurs lignes ou un texte
+          long, on passe par des zones de saisie multilignes à l'aide de la
+          balise <code>&lt;textarea&gt;...&lt;/textarea&gt;</code>.
+        </p>
+        <p>Cette balise possède les attributs suivants :</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Attribut</th>
+              <th>Caractère</th>
+              <th>Utilité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>`name`</td>
+              <td>Obligatoire</td>
+              <td>
+                Nom de la donnée. C’est le nom sous lequel l’information saisie
+                ici sera connue et récupérée dans le script serveur déclenché
+                par le formulaire.
+              </td>
+            </tr>
+            <tr>
+              <td>`rows`</td>
+              <td>Facultatif</td>
+              <td>Nombre de lignes dans la zone de saisie.</td>
+            </tr>
+            <tr>
+              <td>`cols`</td>
+              <td>Facultatif</td>
+              <td>Nombre de caractères par ligne dans la zone de saisie.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          La valeur par défaut contenue dans la zone de saisie multi-ligne est
+          le texte compris entre les balises <code>&lt;textarea&gt;</code> et
+          <code>&lt;/textarea&gt;</code>.
+        </p>
+        <p>Exemple d'une zone de saisie multi-lignes :</p>
+        <pre><code>`&lt;textarea name="commentaire" rows="10" cols="50"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis quis metus ornare semper. In vitae lacus ex. In elementum iaculis malesuada. Maecenas vulputate, erat id molestie dictum, diam dolor faucibus nisl, in pharetra sapien libero eget risus. Morbi vehicula aliquam placerat. Suspendisse mollis tempus dictum. Nullam suscipit nec massa eget viverra. Etiam feugiat facilisis est nec euismod. Quisque convallis, tortor sed placerat lacinia, elit nunc volutpat arcu, vel consequat velit libero at tortor. Suspendisse interdum lacus non felis bibendum facilisis. In sit amet enim mauris.&lt;/textarea&gt;`</code></pre>
+        <p>Affiche :</p>
+        <textarea name="commentaire" rows="10" cols="50">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis quis metus ornare semper. In vitae lacus ex. In elementum iaculis malesuada. Maecenas vulputate, erat id molestie dictum, diam dolor faucibus nisl, in pharetra sapien libero eget risus. Morbi vehicula aliquam placerat. Suspendisse mollis tempus dictum. Nullam suscipit nec massa eget viverra. Etiam feugiat facilisis est nec euismod. Quisque convallis, tortor sed placerat lacinia, elit nunc volutpat arcu, vel consequat velit libero at tortor. Suspendisse interdum lacus non felis bibendum facilisis. In sit amet enim mauris.</textarea
+        >
+        <blockquote>
+          <p>
+            Notez l'appariton éventuelle d'ascenseurs verticaux et/ou
+            horizontaux quand le nombre de colonnes/lignes s'avère insuffisant.
+          </p>
+        </blockquote>
+        <h2>Cases à cocher et boutons radio</h2>
+        <p>
+          Les données peuvent être sélectionnées par l'internaute dans des cases
+          à cocher (plusieurs choix), ou dans des boutons radio (choix unique).
+          Pour cela, on utilise les balises suivantes :
+        </p>
+        <ul>
+          <li>
+            <code>&lt;input type="checkbox"</code>, pour les cases à cocher,
+          </li>
+          <li><code>&lt;input type="radio"</code>, pour les boutons radio.</li>
+        </ul>
+        <p>Ces balises possèdent les attributs suivants :</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Attribut</th>
+              <th>Caractère</th>
+              <th>Utilité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>`name`</td>
+              <td>Obligatoire</td>
+              <td>
+                Nom de la donnée. C'est le nom sous lequel l'information saisie
+                ici sera connue et récupérée dans le script serveur déclenché
+                par le formulaire.
+              </td>
+            </tr>
+            <tr>
+              <td>`value`</td>
+              <td>Obligatoire</td>
+              <td>Libellé correspondant à l'option choisie.</td>
+            </tr>
+            <tr>
+              <td>`checked`</td>
+              <td>Facultatif</td>
+              <td>Indique que l'option sera sélectionnée par défaut.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Exemple de cases à cocher :</strong></p>
+        <pre><code>&lt;input type="checkbox" name="couleur1" value="Bleu" checked&gt; Bleu 
+&lt;input type="checkbox" name="couleur2" value="Rouge"&gt; Rouge 
+&lt;input type="checkbox" name="couleur3" value="Vert" &gt; Vert</code></pre>
+        <p>Affiche :</p>
+        <p>
+          <input type="checkbox" name="couleur1" value="Bleu" checked /> Bleu
+          <input type="checkbox" name="couleur2" value="Rouge" /> Rouge
+          <input type="checkbox" name="couleur3" value="Vert" /> Vert
+        </p>
+        <blockquote>
+          <p>
+            Ici, <em>Bleu</em> est coché par défaut grâce à l'attribut
+            <code>checked</code>.
+          </p>
+        </blockquote>
+        <p><strong>Exemple de boutons radio :</strong></p>
+        <pre><code>&lt;input type="radio" name="couleur" value="Bleu"&gt; Bleu 
+&lt;input type="radio" name="couleur" value="Rouge"&gt; Rouge 
+&lt;input type="radio" name="couleur" value="Vert" checked&gt; Vert</code></pre>
+        <p>Affiche :</p>
+        <p>
+          <input type="radio" name="couleur" value="Bleu" /> Bleu
+          <input type="radio" name="couleur" value="Rouge" /> Rouge
+          <input type="radio" name="couleur" value="Vert" checked /> Vert
+        </p>
+        <p>
+          <strong
+            >Les boutons radio doivent avoir le même nom, c'est-à-dire la même
+            valeur pour l'attribut <code>name</code>.</strong
+          >.
+        </p>
+        <h2>Liste de choix (déroulantes)</h2>
+        <p>
+          L'internaute peut sélectionner les informations qu'il désire dans une
+          liste pré-renseignée.
+        </p>
+        <p>
+          La balise <code>&lt;select&gt;</code> permet de définir la liste des
+          choix possibles.
+        </p>
+        <p>
+          Chaque choix sera défini par une balise <code>&lt;option&gt;</code>,
+          incluse dans le <code>&lt;select&gt;</code>.
+        </p>
+        <p><strong>Exemple :</strong></p>
+        <pre><code>&lt;select name="couleur"&gt; 
+&lt;option&gt;Bleu&lt;/option&gt;
+&lt;option&gt;Rouge&lt;/option&gt;
+&lt;option&gt;Vert&lt;/option&gt;
+&lt;/select&gt;   </code></pre>
+        <p>
+          Les attributs possibles de la balise <code>&lt;select&gt;</code> sont
+          les suivants :
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Attribut</th>
+              <th>Obligatoire</th>
+              <th>Utilité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>`name`</td>
+              <td>Obligatoire</td>
+              <td>
+                Nom de la donnée. C'est le nom sous lequel l'information saisie
+                ici sera connue et récupérée dans le script serveur déclenché
+                par le formulaire.
+              </td>
+            </tr>
+            <tr>
+              <td>`size`</td>
+              <td>Obligatoire</td>
+              <td>
+                Si size vaut 1 (valeur par défaut), c'est une liste déroulante
+                (un seul choix possible). Si size > 1, c'est une liste de choix
+                avec ascenseur.
+              </td>
+            </tr>
+            <tr>
+              <td>`multiple`</td>
+              <td>Facultatif</td>
+              <td>
+                Indique que la sélection pourra être multiple (valable également
+                sur les champs `input` de types `email` et `file`).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Les attributs possibles de la balise <code>&lt;option&gt;</code> sont
+          les suivants :
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Attribut</th>
+              <th>Caractère</th>
+              <th>Utilité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>`value`</td>
+              <td>Facultatif</td>
+              <td>
+                Nom de la donnée pour l'option correspondante. Permet de
+                spécifier une valeur différente de celle affichée à
+                l'internaute. Si absent (attribut facultatif), c'est la valeur
+                affichée à l'internaute (entre
+                <option>et</option>
+                ) qui es transmise.
+              </td>
+            </tr>
+            <tr>
+              <td>`selected`</td>
+              <td>Obligatoire</td>
+              <td>Détermine le choix par défaut.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <strong>
+            Exemple de liste de choix avec l'attribut
+            <code>selected</code> :</strong
+          >
+        </p>
+        <pre><code class="language-html">&lt;label for="couleur"&gt;Choisissez votre couleur&lt;/label&gt;
+&lt;select id="couleur"&gt; 
+&lt;option value="" selected&gt;-&lt;/option&gt;
+&lt;option value="Bleu"&gt;Bleu&lt;/option&gt;
+&lt;option value="Rouge"&gt;Rouge&lt;/option&gt;
+&lt;option value="Vert"&gt;Vert&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+        <label for="couleur">Choisissez votre couleur</label>
+        <select id="couleur">
+          <option value="" selected>-</option>
+          <option value="Bleu">Bleu</option>
+          <option value="Rouge">Rouge</option>
+          <option value="Vert">Vert</option>
+        </select>
+        <p>
+          Ici, si l'internaute ne choisit rien, <em>Vert</em> sera retenu par
+          défaut.
+        </p>
+        <p>
+          <strong>
+            Exemple de liste de choix avec l'attribut <code>size</code> (valeur
+            = 3) :</strong
+          >
+        </p>
+        <pre><code class="language-html">&lt;label for="couleur"&gt;Choisissez votre couleur&lt;/label&gt;
+&lt;select id="couleur" size="3"&gt; 
+&lt;option value=""&gt;-&lt;/option&gt;
+&lt;option value="Bleu"&gt;Bleu&lt;/option&gt;
+&lt;option value="Rouge"&gt;Rouge&lt;/option&gt;
+&lt;option value="Vert"&gt;Vert&lt;/option&gt;
+&lt;option value="Jaune"&gt;Jaune&lt;/option&gt;
+&lt;option value="Blanc"&gt;Blanc&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+        <p>Affiche :</p>
+        <label for="couleur">Choisissez votre couleur</label>
+        <select id="couleur" size="3">
+          <option value="">-</option>
+          <option value="Bleu">Bleu</option>
+          <option value="Rouge">Rouge</option>
+          <option value="Vert">Vert</option>
+          <option value="Jaune">Jaune</option>
+          <option value="Blanc">Blanc</option>
+        </select>
+        <h2>Chargement de fichiers</h2>
+        <p>
+          Le type <code>file</code> sur une balise
+          <code>&lt;input&gt;</code> permet le téléchargement d'un fichier du PC
+          de l'utilisateur sur le serveur où est hébergée la page web.
+        </p>
+        <p>
+          L'utilisation de ce type requiert impérativement d'ajouter à la balise
+          <code>&lt;form&gt;</code> :
+        </p>
+        <ul>
+          <li>
+            La valeur <code>POST</code> pour l'attribut <code>method</code>, car
+            le téléchargement de fichier ne fonctionne pas avec une requête HTTP
+            GET).
+          </li>
+          <li>
+            L'attribut <code>enctype</code> avec la valeur
+            <em>multipart/form-data</em>.
+          </li>
+        </ul>
+        <p><strong>Exemple :</strong></p>
+        <pre><code>&lt;form action="destination.php" method="post" enctype="multipart/form-data"&gt; 
+&lt;input type="file" name="fichier"&gt; 
+&lt;/form&gt;</code></pre>
+        <p>Affiche :</p>
+        <form
+          action="destination.php"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <input type="file" name="fichier" />
+        </form>
+        <p>
+          Le fichier sera alors stocké physiquement sur le serveur dans un
+          répertoire dont le chemin sera à définir dans le traitement (langage
+          côté serveur).
+        </p>
+        <p>
+          <strong
+            >Le téléchargement d'un fichier sur un serveur via un formulaire
+            présente des failles de sécurité graves qu'il convient de traiter
+            avec un langage côté serveur.</strong
+          >
+        </p>
+        <p><strong>Exemple :</strong></p>
+        <pre><code>&lt;input type="file" name="fichier" accept="image/png"&gt;</code></pre>
+        <p>n'autorisera que les images de type <em>png</em>.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Attribut</th>
+              <th>Utilité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>`multiple`</td>
+              <td>Sélection multiple de fichiers.</td>
+            </tr>
+            <tr>
+              <td>`required`</td>
+              <td>
+                Champ requis (encore une fois, ne valide en rien à la sécurité).
+              </td>
+            </tr>
+            <tr>
+              <td>`accept`</td>
+              <td>
+                Permet de n'autoriser que certains types (MIME) de fichiers (ne
+                constitue en rien une sécurité).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Différentes informations sur le fichier (nom, taille, type MIME etc.)
+          seront transmises par la page web au serveur. Ces informations seront
+          à récupérer, contrôler et traiter via un langage de script côté
+          serveur (PHP...).
+        </p>
+        <h2>Champs cachés</h2>
+        <p>
+          Il est possible d'envoyer des données cachées au serveur (données non
+          saisies par l'utilisateur mais créées dans le code HTML du
+          formulaire). Ceci se fait en affectant la valeur <code>hidden</code> à
+          l'attribut <code>type</code> :
+        </p>
+        <pre><code>`&lt;input type="hidden"...&gt;`</code></pre>
+        <blockquote>
+          <p>
+            L'attribut <code>hidden</code>
+            <strong>ne sécurise en rien</strong> un formulaire. En affichant le
+            code source, la valeur saisie est visible en clair.
+          </p>
+        </blockquote>
+        <h2>Etiquette de champs</h2>
+        <p>
+          Pour indiquer à l'internaute quelle est l'information à saisir dans le
+          champ, il faut ajouter une étiquette de champ via la balise
+          <code>&lt;label&gt;</code> :
+        </p>
+        <pre><code>&lt;label for="nom"&gt;Nom :&lt;/label&gt;&lt;input type="text" name="nom" id="nom"&gt; </code></pre>
+        <p>
+          La balise <code>&lt;label&gt;</code> possède obligatoirement
+          l'attribut <code>for</code> qui permet d'associer l'étiquette au champ
+          de formulaire souhaité.
+        </p>
+        <p>
+          Du côté du champ (balise <code>&lt;input&gt;</code>), il est
+          nécessaire d'ajouter l'attribut <code>id</code> dont la valeur doit
+          correspondre avec celle du <code>for</code> pour que l'association
+          fonctionne.
+        </p>
+        <blockquote>
+          <p>
+            En pratique, on renseigne les attributs <code>id</code> et
+            <code>for</code> avec la même valeur que l'attribut
+            <code>name</code>, sauf pour les champs de types cases à cocher et
+            bouton radio.
+          </p>
+        </blockquote>
+        <h2>Groupes de champs</h2>
+        <p>
+          La balise <code>&lt;fieldset&gt;</code> permet de constituer des
+          groupes de champs. Son utilisation nécessite obligatoirement la balise
+          fille <code>&lt;legend&gt;</code>, à placer immédiatement après, qui
+          attribue un nom au groupe.
+        </p>
+        <p>
+          <strong>Exercice à completer avec les étiquettes de champs:</strong>
+        </p>
+        <pre><code>&lt;fieldset&gt;
+&lt;legend&gt;Coordonnées&lt;/legend&gt;
+&lt;label for="nom"&gt;Nom:&lt;/label&gt;&lt;input type="text" name="nom" id="?"&gt;&lt;br&gt;
+&lt;label for="?"&gt;Email:&lt;/label&gt;&lt;input type="email" name="email"&gt;&lt;br&gt;
+&lt;label for="date"&gt;Date de naissance:&lt;/label&gt;&lt;input type="date" name="ddn" id="date"&gt;
+&lt;/fieldset&gt;</code></pre>
+        <p>Affiche :</p>
+        <fieldset>
+          <legend>Coordonnées</legend>
+          <label for="nom">Nom:</label
+          ><input type="text" name="nom" id="nom" /><br />
+          <label for="email">Email:</label
+          ><input type="email" name="email" id="email" /><br />
+          <label for="date">Date de naissance:</label
+          ><input type="date" name="ddn" id="date" />
+        </fieldset>
+        <h2>Autres types de champs</h2>
+        <h3>Datalist</h3>
+        <p>
+          HTML5 a ajouté l'élément <code>&lt;datalist&gt;</code> qui permet de
+          cibler une liste d'éléments via un champ <code>&lt;input&gt;</code>.
+          Une autocomplétion/autosuggestion sera faite à l'internaute en
+          fonction des caractères qu'il saisit si une ou des valeur(s) présentes
+          dans les <code>&lt;option&gt;</code> correspondent.
+        </p>
+        <p><strong>Exemple :</strong></p>
+        <pre><code class="language-html">&lt;label for="metiers2"&gt;Sélectionnez votre métier&lt;/label&gt;
+&lt;input type="text" name="metiers1" id="metiers2" list="metiers3"&gt;
+&lt;datalist id="metiers3"&gt;
+&lt;option value="webmaster"&gt;
+&lt;option value="développeur"&gt;
+&lt;option value="administrateur B.D.D."&gt;
+&lt;option value="webdesigner"&gt;
+&lt;/datalist&gt;</code></pre>
+        <label for="metiers2">Sélectionnez votre métier</label>
+        <input type="text" name="metiers1" id="metiers2" list="metiers3" />
+        <datalist id="metiers3">
+          <option value="webmaster"></option>
+          <option value="développeur"></option>
+          <option value="administrateur B.D.D."></option>
+          <option value="webdesigner"></option>
+        </datalist>
+
+        <ul>
+          <li>
+            Dans la balise <code>&lt;input&gt;</code>, on ajoute l'attribut
+            <code>list</code> qui reçoit pour valeur l'identifiant de la balise
+            <code>&lt;datalist&gt;</code>, ils sont ainsi associés.
+          </li>
+          <li>
+            Dans la balise <code>&lt;datalist&gt;</code>, il faut donc
+            l'attribut <code>id</code> avec une valeur identique à celle de
+            l'attribut <code>list</code>.
+          </li>
+          <li>
+            Les différents choix sont indiqués via des balises
+            <code>&lt;option&gt;</code> avec un attribut
+            <code>value</code> (comme pour la balise
+            <code>&lt;select&gt;</code>).
+          </li>
+        </ul>
+        <!-- +++ EN COMMENTAIRES ++++++++++++++++++
+### Output
+La balise `<output>` (= sortie) permet l'affichage du résultat d'un calcul lors de la soumission d'un formulaire grâce à l'instruction HTML d'événement `onsubmit`.  
+**Exemple :**
+<form method="post" action="post.php" id="monform" onsubmit="resultat.value = parseInt(nombre1.value) + parseInt(nombre2.value); return false;">
+  <input type="number" name="nombre1" id="nombre1"> + <input type="number" name="nombre2" id="nombre2"> = <output for="number1 number2" name="resultat" form="monform"></output><br><br>
+ <input type="submit" name="envoi" value="Calculer">
+</form>
+Notez l'utilisation de la fonction javascript `parseInt()` afin de convertir en entier. Sans celle-ci, le résultat affiché, par exemple pour 2 + 1, serait _21_, c'est-à-dire une simple concaténation de chaînes. 
++++ fin commentaires +++ -->
+        <h2>Validation des formulaires</h2>
+        <p>
+          HTML 5 propose des attributs pour aider à la validation des
+          formulaires.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Attribut</th>
+              <th>Utilité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>`required`</td>
+              <td>
+                permet d'indiquer que le champ est obligatoire. Si rien n'a été
+                saisi, un message d'erreur s'affiche lors de la soumission du
+                formulaire (message par défaut ou personnalisé via l'attribut
+                `title`)
+              </td>
+            </tr>
+            <tr>
+              <td>`pattern`</td>
+              <td>
+                Motif d'expression régulière (nous aborderons ce point dans le
+                cours Javascript) qui permet de spécifier le format attendu pour
+                la saisie.
+              </td>
+            </tr>
+            <tr>
+              <td>`title`</td>
+              <td>Personnalisation du message d'erreur.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Exemple :</strong></p>
+        <pre><code class="language-html">&lt;input type="text" placeholder="Entrez votre nom" pattern="^[a-z]+$" required title="Entrez votre nom (que des caractères entre a et z)"&gt;</code></pre>
+        <form>
+          <input
+            type="text"
+            placeholder="Entrez votre nom"
+            pattern="^[a-z]+$"
+            required
+            title="Entrez votre nom (que des caractères entre a et z)"
+          />
+          <input type="submit" />
+        </form>
+        <p>
+          L'utilisation des attributs <code>pattern</code> et
+          <code>required</code> ne <strong>sécurise en rien</strong> un
+          formulaire, mais relève davantage de l'ergonomie (<abbr
+            title="Interface Homme Machine"
+            >I.H.M.</abbr
+          >). Il convient de toujours effectuer les contrôles avec un langage
+          côté serveur. Nous reviendrons donc longuement sur la validation dans
+          les cours Javascript et PHP.
+        </p>
+        <blockquote>
+          <p>
+            Dans l'exemple, le pattern <code>^[a-z]+$</code> indique que l'on
+            attend une chaîne de caractères.
+          </p>
+        </blockquote>
+        <h2>Exercices</h2>
+        <p>
+          1 - Réalisez la page HTML suivante en indiquant
+          <code>http://bienvu.net/script.php</code> comme valeur de l'attribut
+          <code>action</code> et <em>GET</em> pour l'attribut
+          <code>method</code>. Attention, certains champs sont obligatoires.
+        </p>
+        <p>
+          Pour la liste déroulante, les valeurs doivent être :
+          <em>Mes commandes</em>, <em>Question sur un produit</em>,
+          <em>Réclamation</em>, <em>Autres</em>.
+        </p>
+        <p>
+          <font color="red">
+            <strong
+              >ATTENTION : le cadre noir n'est pas à reproduire !</strong
+            ></font
+          >
+        </p>
+        <p>
+          <img
+            src="/ressources/Pool/TB_DEV/WEB_HTML/images/HTML_08_formulaire_exercice_2.jpg"
+            alt="images/HTML_08_formulaire_exercice_2.jpg"
+          />
+        </p>
+        <p>ci-dessous, la liste déroulante attendue :</p>
+        <p>
+          <img
+            src="/ressources/Pool/TB_DEV/WEB_HTML/images/Liste_deroulante_formulaire.jpg"
+            alt="images/Liste_deroulante_formulaire.jpg"
+          />
+        </p>
+        <p>2 - Observez les données transmises dans l'url.</p>
+        <p>
+          3 - Remplacer la valeur <em>GET</em> par <em>POST</em> pour l'attribut
+          <code>method</code>. Soumettez à nouveau le formulaire et observez
+          l'url.
+        </p>
+        <p>
+          <br />
+          <br />
+          <br />
+        </p>
+      </div>
+      <div class="menu-markdown"><img src="/images/menu.png" /></div>
+    </div>
+  </body>
+</html>
+<script>
+  hljs.highlightAll();
+</script>
+<script src="/js/menu-markdown.js"></script>
+<script>
+  document.title = "nCode | " + document.querySelector("h1").textContent;
+</script>

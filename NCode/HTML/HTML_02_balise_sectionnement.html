@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/github-markdown.css" />
+    <link rel="stylesheet" href="/css/menu-markdown.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="/highlight.js/styles/stackoverflow-dark.min.css"
+    />
+    <script src="/highlight.js/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="markdown-body">
+        <h1>HTML - 02 - Balises</h1>
+        <h2>Introduction</h2>
+        <p>
+          Une page web est composée comme nous l'avons vu au chapitre précédent
+          d'une partie entête (métadonnées) et du corps du document pour le
+          contenu, comprise dans la balise <code>&lt;body&gt;</code>.
+        </p>
+        <p>
+          Cette dernière partie comprend des balises structurantes, c'est-à-dire
+          qui définissent la structure de la page web (entête, lignes, colonnes
+          etc.) et des balises de formatage qui permettent de mettre en forme le
+          contenu (textes etc.).
+        </p>
+        <p>
+          Les balises structurantes composent le sectionnement; elles sont, en
+          général, de type <strong>bloc</strong> (<em>block type</em>, a
+          contrario celles de formatage sont souvent de type en ligne (<em
+            >inline type</em
+          >).
+        </p>
+        <h2>Types de balises</h2>
+        <h3>Les balises de type blocs</h3>
+        <p>
+          La balise de type bloc réside dans le fait qu'ils sont séparés par un
+          saut de ligne avant et après l'élément, créant ainsi un bloc de
+          contenu. On peut, en quelque sorte, les représenter comme des blocs
+          empilés les uns sur les autres.
+        </p>
+        <p>
+          Un élément de type bloc occupe par défaut (c'est-à-dire sans
+          instructions CSS de largeur) toute la largeur disponible. Cette
+          largeur est de 100% du dispositif d'affichage si la balise n'est pas
+          incluse dans une autre; lorsque la balise est comprise dans une
+          parente sa largeur de 100% du parent
+        </p>
+        <blockquote>
+          <p>
+            Si le bloc parent a une largeur de 50%, la largeur de la balise
+            enfant fera 100% de ces 50%, c'est-à-dire 50% aussi.
+          </p>
+        </blockquote>
+        <p>Liste des éléments HTML de <strong>type bloc</strong> :</p>
+        <ul>
+          <li><code>&lt;address&gt;</code> information de contact</li>
+          <li><code>&lt;article&gt;</code> contenu d'un article</li>
+          <li><code>&lt;aside&gt;</code> Contenu tangentiel</li>
+          <li><code>&lt;audio&gt;</code> Lecteur audio</li>
+          <li><code>&lt;blockquote&gt;</code> Citation longue</li>
+          <li><code>&lt;canvas&gt;</code> Canevas de dessin</li>
+          <li><code>&lt;div&gt;</code> Division d'un document</li>
+          <li><code>&lt;fieldset&gt;</code> Ensemble de champs</li>
+          <li><code>&lt;footer&gt;</code> Bas de page ou de section</li>
+          <li><code>&lt;form&gt;</code> formulaire</li>
+          <li>
+            <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>,
+            <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>,
+            <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> éléments de titre
+            de niveau 1 à 6.
+          </li>
+          <li><code>&lt;header&gt;</code> entête de page ou de section</li>
+          <li><code>&lt;hr&gt;</code> Ligne de division horizontale</li>
+          <li><code>&lt;nav&gt;</code> Contient des liens de navigation.</li>
+          <li><code>&lt;ol&gt;</code> Liste ordonnée.</li>
+          <li><code>&lt;p&gt;</code> Paragraphe.</li>
+          <li><code>&lt;pre&gt;</code> Texte pré-formaté.</li>
+          <li><code>&lt;section&gt;</code> Section d'une page web.</li>
+          <li><code>&lt;table&gt;</code> Tableau.</li>
+          <li><code>&lt;ul&gt;</code> Liste non-ordonnée.</li>
+          <li><code>&lt;video&gt;</code> Lecteur vidéo.</li>
+        </ul>
+        <h3>Les balises de type en ligne</h3>
+        <p>
+          Par opposition aux éléments blocs, les éléments de type en-ligne
+          (inline en anglais) sont ceux qui occupent l'espace délimité par leur
+          balise plutôt que d'interrompre le flux du contenu. En clair ils
+          n’occupent en largeur que ce dont ils ont besoin et non pas 100% comme
+          les éléments blocs.
+        </p>
+        <p>Liste des éléments <strong>en-ligne</strong> :</p>
+        <ul>
+          <li><code>&lt;a&gt;</code> lien</li>
+          <li><code>&lt;abbr&gt;</code> Abréviation</li>
+          <li><code>&lt;acronym&gt;</code> Acronyme</li>
+          <li><code>&lt;b&gt;</code> gras (bold)</li>
+          <li><code>&lt;br&gt;</code> saut de ligne</li>
+          <li><code>&lt;button&gt;</code> boutton</li>
+          <li><code>&lt;cite&gt;</code> Titre d’une oeuvre</li>
+          <li><code>&lt;code&gt;</code> Code (langage informatique)</li>
+          <li><code>&lt;em&gt;</code> Emphase</li>
+          <li><code>&lt;i&gt;</code> italique</li>
+          <li><code>&lt;img&gt;</code> image</li>
+          <li><code>&lt;input&gt;</code> champ de formulaire</li>
+          <li><code>&lt;label&gt;</code> Etiquette de champ de formulaire</li>
+          <li><code>&lt;select&gt;</code> liste déroulante (formulaires)</li>
+          <li><code>&lt;small&gt;</code> petits caractères</li>
+          <li>
+            <code>&lt;span&gt;</code> conteneur générique de texte en ligne
+          </li>
+          <li>
+            <code>&lt;strong&gt;</code> texte important (affiché en gras mais ne
+            pas confondre)
+          </li>
+          <li><code>&lt;sub&gt;</code> texte en indice</li>
+          <li><code>&lt;sup&gt;</code> texte en exposant</li>
+          <li><code>&lt;textarea&gt;</code> zone de texte (formulaires)</li>
+        </ul>
+        <p>
+          Ces listes ne sont pas exhaustives, vous pouvez vous rendre sur le
+          site
+          <a href="https://www.w3schools.com/tags/default.asp">W3School</a> pour
+          avoir la liste complète de toutes les balises.
+        </p>
+        <h2>Le sectionnement</h2>
+        <p>
+          Nous l'avons vu, les éléments de type blocs permettent de structurer
+          une page web à l'intérieur du corps de la page
+          <code>&lt;body&gt;</code>.
+        </p>
+        <p>HTML 5 a ajouté de nouvelles balises :</p>
+        <ul>
+          <li>
+            <code>&lt;header&gt;</code> indique l’entête (on y mettra par
+            exemple un logo),
+          </li>
+          <li>
+            <code>&lt;nav&gt;</code> indique un bloc de navigation, c’est-à-dire
+            un menu
+          </li>
+          <li><code>&lt;section&gt;</code> indique une section de contenu</li>
+          <li>
+            <code>&lt;article&gt;</code> indique un article de contenu; cette
+            balise doit être englobée dans une section (qui peut contenir
+            plusieurs articles).
+          </li>
+          <li>
+            <code>&lt;aside&gt;</code> se positionne sur le côté d’un article
+            (ou d'une section) pour indiquer un complément de texte (une note,
+            une référence etc.) se rapportant directement à l'article. Cette
+            balise ne doit pas servir à créer des colonnes latérales au contenu
+            principal dont le contenu ne serait pas en rapport).
+          </li>
+        </ul>
+        <p>
+          <strong
+            >Exemple de sectionnement à l'aide des nouvelles balises :</strong
+          >
+        </p>
+        <p>
+          <img
+            src="/ressources/Pool/TB_DEV/WEB_HTML/images/HTML_02_sectionnement.png"
+            alt="Exemple sectionnement d&#039;une page HTML 5"
+          />
+        </p>
+        <h2>La balise <code>&lt;div&gt;</code></h2>
+        <p>
+          La balise <code>&lt;div&gt;</code>, pour division (« divide » en
+          anglais), est un conteneur générique qui permet d'organiser le contenu
+          sans représenter quoi que ce soit d’un point de vue sémantique. Il
+          doit être utilisé lorsqu'il n’existe aucune balise adéquate sur le
+          plan sémantique. Cette balise a connu un usage parfois intensif
+          (c’est-à-dire pages structurées uniquement avec) qui n’a plus lieu
+          d’être depuis l'arrivée de HTML 5 et ses nouvelles balises de
+          sectionnement (que l’on va aborder plus loin dans ce cours).
+        </p>
+        <p>
+          Un div peut contenir un autre <code>&lt;div&gt;</code> (voire
+          plusieurs) ainsi que d’autres balises enfant, notamment des
+          paragraphes.
+        </p>
+        <p>Exemples :</p>
+        <pre><code>&lt;div&gt;Hello world !&lt;/div&gt;
+&lt;div&gt;
+&lt;div&gt;Hello world !&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div&gt;
+    &lt;p&gt;Hello world !&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <h2>La balise de paragraphe <code>&lt;p&gt;</code></h2>
+        <p>
+          Dans un souci de lisibilité et de structuration, les documents doivent
+          être découpés en paragraphes. En HTML, il existe deux balises qui
+          permettent d’obtenir soit un saut de ligne, soit le début d’un nouveau
+          paragraphe.
+        </p>
+        <p>
+          La balise <code>&lt;p&gt;&lt;/p&gt;</code> permet de commencer un
+          nouveau paragraphe (double espacement).
+        </p>
+        <p>
+          La balise <code>&lt;br&gt;</code> effectue un retour à la ligne
+          (simple espacement) et ne comporte jamais de texte.
+        </p>
+        <blockquote>
+          <p>
+            Note : avant HTML 5, la balise <code>&lt;br&gt;</code> comportait un
+            slash de fermeture (<code>&lt;br /&gt;</code>) désormais inutile.
+          </p>
+        </blockquote>
+        <ul>
+          <li>
+            <a
+              href="https://www.alsacreations.com/article/lire/1376-html5-section-article-nav-header-footer-aside.html"
+              >Article Alsacréations</a
+            >
+          </li>
+        </ul>
+        <h2>AUTRES BALISES</h2>
+        <h3>Les titres hiérarchiques</h3>
+        <p>
+          Les balises titre permettent de mettre en évidence des parties de
+          texte. Plusieurs styles de titre sont prédéfinis, identifiés par les
+          balises <code>&lt;h1&gt;</code> (le plus gros) à
+          <code>&lt;h6&gt;</code> (le plus petit), ce qui donne 6 niveaux de
+          titres différents. Le texte du titre sera encadré par les balises
+          d’ouverture et de fermeture choisies.
+        </p>
+        <p>
+          <strong>Astuce SEO</strong>
+          Vérifier la présence d'au moins un élément H1 dans chaque page :
+          <a
+            href="https://checklists.opquast.com/fr/seo/chaque-page-du-site-contient-un-element-de-titre-de-section-h1"
+            >Chaque page du site contient un élément de titre de section H1</a
+          >
+        </p>
+        <p>Exemple et code source avec chaque balise titre :</p>
+        <pre><code>&lt;h1&gt;Titre H1 très important&lt;/h1&gt;
+&lt;h2&gt;Titre H2 moins important que H1&lt;/h2&gt; 
+&lt;h3&gt;Titre H3 moins important que H2&lt;/h3&gt; 
+&lt;h4&gt;Titre H4 moins important que H3&lt;/h4&gt; 
+&lt;h5&gt;Titre H5 moins important que H4&lt;/h5&gt; 
+&lt;h6&gt;Titre H6 moins important que H5&lt;/h6&gt;</code></pre>
+        <p>Testez ce code, qui doit afficher le résultat suivant :</p>
+        <img
+          src="/ressources/Pool/TB_DEV/WEB_HTML/images/HTML_02_balises_hn.png"
+          alt="Balises hiérarchiques"
+          style="border: 2px solid #000"
+        />
+        <h3>La balise de saut de ligne <code>&lt;br&gt;</code></h3>
+        <p>
+          On peut insérer un retour à la ligne via la balise
+          <code>&lt;br&gt;</code>. Cette balise doit concerner un retour à la
+          ligne dans une de texte (<code>div</code>, paragraphe, article,
+          citation) mais en aucun cas être utilisé pour structurer la page.
+        </p>
+        <h3>La balise de ligne horizontale <code>&lt;hr&gt;</code></h3>
+        <p>
+          On peut insérer la balise de ligne horizontale
+          <code>&lt;hr&gt;</code> pour séparer certaines parties d’un document
+          HTML.
+        </p>
+        <blockquote>
+          <p>
+            En HTML 4, les balises <code>&lt;br&gt;</code> et
+            <code>&lt;hr&gt;</code> comportaient un slash de fermeture
+            (<code>&lt;br/&gt;</code>), (<code>&lt;hr/&gt;</code>) qui n'ont
+            plus lieu d'être en HTML 5.
+          </p>
+        </blockquote>
+        <h2>Conclusion</h2>
+        <p>
+          La question à se poser est quelle balise dois-je utiliser pour, par
+          exemple, créer une colonne, un paragraphe, une entête de site ?
+          Réponse via ce schéma :
+        </p>
+        <p>
+          <img
+            src="/ressources/Pool/TB_DEV/WEB_HTML/images/HTML_02_cyberscooty_diagramme_html5.svg"
+            alt="Diagramme d&#039;utilisation des balises HTML 5"
+          />
+        </p>
+        <h2>Travail à réaliser</h2>
+        <p>Concevez une nouvelle page HTML.</p>
+        <p>Cette page doit contenir:</p>
+        <ul>
+          <li>un titre (avec la balise <code>&lt;h1&gt;</code>)</li>
+          <li>
+            un paragraphe de texte (lorem ipsum) (avec la balise
+            <code>&lt;p&gt;</code>)
+          </li>
+          <li>une image (avec la balise <code>&lt;img&gt;</code>)</li>
+        </ul>
+        <p>
+          <br />
+          <br />
+          <br />
+        </p>
+      </div>
+      <div class="menu-markdown"><img src="/images/menu.png" /></div>
+    </div>
+  </body>
+</html>
+<script>
+  hljs.highlightAll();
+</script>
+<script src="/js/menu-markdown.js"></script>
+<script>
+  document.title = "nCode | " + document.querySelector("h1").textContent;
+</script>

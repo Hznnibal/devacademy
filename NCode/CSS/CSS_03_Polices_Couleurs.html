@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/github-markdown.css" />
+    <link rel="stylesheet" href="/css/menu-markdown.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="/highlight.js/styles/stackoverflow-dark.min.css"
+    />
+    <script src="/highlight.js/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="markdown-body">
+        <h1><strong>CSS : Polices et couleurs</strong></h1>
+        <h1>Polices</h1>
+        <h2>Polices par défaut</h2>
+        <p>
+          Par défaut, c’est-à-dire en l’absence d’une feuille de style CSS dans
+          la page web, le texte (police de caractère et taille) sera affiché
+          selon les paramétrages du navigateur.
+        </p>
+        <p>
+          Les navigateurs ont eux-mêmes un paramétrage par défaut, qui diffère
+          d’un navigateur à l’autre.
+        </p>
+        <p>Les polices par défaut peuvent être modifiées par l’utilisateur.</p>
+        <p>
+          Elles peuvent ensuite bien sûr, selon le concept de cascade, être
+          modifiées par les feuilles de styles programmées par le développeur,
+          ou celles de frameworks CSS (Bootstrap, Foundation etc.).
+        </p>
+        <h2>Les propriétés des polices de caractères</h2>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Propriété</th>
+              <th style="text-align: left">Fonction</th>
+              <th style="text-align: left">Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">font-family</td>
+              <td style="text-align: left">
+                Une liste de familles de la police à utiliser
+              </td>
+              <td style="text-align: left">
+                #texte {font-family: Verdana, sans-serif }
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">font-size</td>
+              <td style="text-align: left">
+                Taille de la police, pouvant être indiquée dans plusieurs unités
+                : px, pt, em, rem, %, vw/vh
+              </td>
+              <td style="text-align: left">#texte { font-size: 14pt; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">font-style</td>
+              <td style="text-align: left">
+                Style de la police : normal, italique, oblique
+              </td>
+              <td style="text-align: left">#texte { font-style : italic;}</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">font-variant</td>
+              <td style="text-align: left">
+                Variante de la police : permet d’afficher en capitale ou en
+                petites majuscules
+              </td>
+              <td style="text-align: left">
+                #texte { font-variant: small-caps;} #texte {font-variant:
+                normal;}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">font-weight</td>
+              <td style="text-align: left">
+                Graisse (niveau de « gras ») de la police. Nombreuses valeurs
+                possibles : bold, lighter, semi-bold, bolder etc. ou encore une
+                valeur numérique.
+              </td>
+              <td style="text-align: left">
+                #texte { font-weight: semi-bold; } #texte font-weight: 100; }
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">font</td>
+              <td style="text-align: left">
+                L’ensemble des propriétés affectant la police peuvent être
+                regroupées
+              </td>
+              <td style="text-align: left">
+                <strong>Au lieu d’avoir :</strong> #texte { font-family:
+                Verdana, sans-serif; font-style : italic; font-variant:
+                small-caps; font-weight: semi-bold; }
+                <strong>On aura :</strong> #texte { font: 14pt semi-bold italic
+                small-caps Verdana, sans-serif; }
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left"></td>
+              <td style="text-align: left"></td>
+              <td style="text-align: left">
+                On aura : #texte { font: 14pt semi-bold italic small-caps
+                Verdana, sans-serif; }
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>Les familles de polices</h2>
+        <p>Le nom de la police est indiqué via la propriété font-family.</p>
+        <p>
+          Celle-ci peut comporter plusieurs noms de police, séparés par une
+          virgule, généralement les polices « standard », afin de s’assurer
+          qu’au moins une sera présente sur le PC de l’utilisateur.
+        </p>
+        <p>
+          Dans ce cas, le navigateur regarde si la première police de la liste
+          est présente, sinon il testera la seconde et ainsi de suite jusqu’à
+          afficher la première présente. Dans le cas où aucune n’est présente,
+          ce sera la police par défaut du navigateur (ou celle paramétrée par
+          l’utilisateur dans son navigateur) qui sera affichée, ce qui risque de
+          casser le graphisme attendu.
+        </p>
+        <p>
+          Si un nom de police comporte un espace (Times New Roman, Trebuchet MS
+          etc.), il doit être échappé par des guillemets (simples ou doubles).
+        </p>
+        <p>Exemples :</p>
+        <pre><code class="language-css">#texte {
+font-family: Arial, "Times New Roman", sans-serif;
+}</code></pre>
+        <p>
+          Les polices peuvent être appelées par leur nom (family name) ou par
+          leur type (generic name).
+        </p>
+        <p>
+          Les types sont les suivants regroupent des polices selon des
+          spécificités de styles graphiques (sérif, sans sérif, monospace,
+          cursive etc.).
+        </p>
+        <p>
+          Dans ce second cas, les polices correspondantes au groupe seront
+          appelées par le navigateur.
+        </p>
+        <p>
+          Les systèmes d’exploitation et les navigateurs web possèdent des
+          familles de police par défaut. Certaines polices (Arial, Verdana,
+          Times New Roman etc.) sont donc utilisées couramment car présentes.
+        </p>
+        <p>
+          Cependant, une police présente sur un PC peut ne pas l’être sur un
+          autre PC, les utilisateurs ayant la possibilité
+          d’installer/désinstaller des polices sur leur système d’exploitation.
+        </p>
+        <p>
+          Aucun moyen ne permet au développeur d’un site de s’assurer qu’une
+          police sera présente sur le PC de tous les internautes.
+        </p>
+        <p>
+          Par contre, le CSS permet désormais d’utiliser des polices en les
+          installant directement sur le site : on dépose le fichier de police
+          (formats eot, woff etc.) dans un répertoire du site (nommé par exemple
+          fonts) puis on l’appelle via la propriété font-face :
+        </p>
+        <pre><code class="language-css">@font-face {
+font-family: "Open Sans";
+src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2") ;     
+}</code></pre>
+        <p>
+          Autre alternative, utiliser des solutions en ligne telles que
+          <a href="https://fonts.google.com/">Google Fonts</a>.
+        </p>
+        <p>
+          Sur les sites de polices (Dafont.com etc.) certaines polices sont
+          payantes, il convient donc d’acquitter d’une licence d’utilisation.
+        </p>
+        <p>
+          D’autres
+          <a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Fonts"
+            >instructions CSS</a
+          >
+          existent pour les polices
+        </p>
+        <h2>Unités de taille des polices</h2>
+        <p>
+          Il existe plusieurs unités de taille pour les polices. Celles-ci se
+          divisent en 2 types : les fixes (ou absolues) et les relatives.
+        </p>
+        <h3>Unités de taille fixes</h3>
+        <p>
+          Les unités de tailles fixes (ou absolues) ne se redimensionnent pas,
+          même dans le cadre d’un site dit « responsive ».
+        </p>
+        <p>
+          Certaines proviennent directement de l’imprimerie et sont dans la
+          réalité très peu utilisées dans le web (sauf pour, justement, les
+          feuilles de styles destinées à l’impression).
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Unité</th>
+              <th style="text-align: left">Abréviation</th>
+              <th style="text-align: left">Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">Point</td>
+              <td style="text-align: left">pt</td>
+              <td style="text-align: left">#texte { font-size: 14pt;}</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Pica</td>
+              <td style="text-align: left">pc</td>
+              <td style="text-align: left">#texte { font-size : 14pc;}</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Centimètre, millimètre</td>
+              <td style="text-align: left">cm, mm</td>
+              <td style="text-align: left">#texte { font-size : 14cm; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Pouce (Inch)</td>
+              <td style="text-align: left">in</td>
+              <td style="text-align: left">#texte { font-size: 14in; }</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Unités de taille relatives</h3>
+        <p>
+          Les unités de taille relatives sont redimensionnées en fonction d’un
+          élément parent (pas forcément le parent immédiat) du D.O.M.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Unité</th>
+              <th style="text-align: left">Abréviation</th>
+              <th style="text-align: left">Redimensionnement</th>
+              <th style="text-align: left">Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">Pixel</td>
+              <td style="text-align: left">px</td>
+              <td style="text-align: left">
+                Relative au dispositif d’affichage (dépendance par rapport aux
+                réglages du navigateur)
+              </td>
+              <td style="text-align: left">#texte { font-size: 14px; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Pourcentage</td>
+              <td style="text-align: left">%</td>
+              <td style="text-align: left">
+                Relative à la taille de la police de l’élément parent.
+              </td>
+              <td style="text-align: left">#texte { font-size: 14%; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Cadratin</td>
+              <td style="text-align: left">em</td>
+              <td style="text-align: left">
+                Relative à la taille de la police de l’élément parent.
+              </td>
+              <td style="text-align: left">#texte { font-size: 14em; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Root em</td>
+              <td style="text-align: left">rem</td>
+              <td style="text-align: left">
+                Proportionnelle à l’élément racine de la page, c’est-à-dire à la
+                balise <code>&lt;html&gt;</code>
+              </td>
+              <td style="text-align: left">#texte { font-size : 0.8rem; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Viewport width</td>
+              <td style="text-align: left">vw</td>
+              <td style="text-align: left">
+                Proportionnelle à la largeur du dispositif d’affichage.1vw =
+                1/100éme de la largeur
+              </td>
+              <td style="text-align: left">#texte { font-size: 14vw; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Viewport height</td>
+              <td style="text-align: left">vh</td>
+              <td style="text-align: left">
+                Proportionnelle à la hauteur du dispositif d’affichage.1vw =
+                1/100éme de la hauteur
+              </td>
+              <td style="text-align: left">#texte { font-size: 14vh; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Viewport min</td>
+              <td style="text-align: left">vmin</td>
+              <td style="text-align: left">
+                Proportionnelle à la plus petite valeur entre la largeur et la
+                hauteur de viewport.
+              </td>
+              <td style="text-align: left">#texte { font-size: 14vmin; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Viewport max</td>
+              <td style="text-align: left">vmax</td>
+              <td style="text-align: left">
+                Proportionnelle à la plus grande valeur entre la largeur et la
+                hauteur de viewport.
+              </td>
+              <td style="text-align: left">#texte { font-size: 14vmax; }</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Quelle unité choisir ?</h3>
+        <p>
+          La majorité des sites web utilisaient les pixels, jusqu’à l’avènement
+          des sites responsive. La problématique des unités de taille sera de
+          nouveau abordée dans le cours sur le web responsive.
+        </p>
+        <h3>Hauteur de ligne</h3>
+        <p>
+          Pour la typographie web, un dernier élément est à prendre en compte :
+          la hauteur de ligne, spécifiée par la propriété CSS
+          <code>line-height</code>.
+        </p>
+        <p>
+          Comme pour les polices et leur taille, les navigateurs définissent une
+          hauteur de ligne par défaut.
+        </p>
+        <pre><code class="language-css">p {
+line-height: 3em;     
+}</code></pre>
+        <p>
+          Pour rétablir la hauteur de ligne initiale (celle par défaut), il faut
+          utiliser la valeur normal :
+        </p>
+        <pre><code class="language-css">p {
+line-height: normal;     
+}</code></pre>
+        <h2>Alignement</h2>
+        <p>
+          Il est possible bien entendu comme dans les logiciels de traitement de
+          texte (Word…) d’aligner votre contenu grâce à la propriété
+          <code>text-align</code>:
+        </p>
+        <p>Exemple (centre le contenu de tous les div) :</p>
+        <pre><code class="language-css">div {
+text-align: center;     
+}</code></pre>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Alignement</th>
+              <th style="text-align: left">CSS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">gauche</td>
+              <td style="text-align: left">left</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">droite</td>
+              <td style="text-align: left">right</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">centré</td>
+              <td style="text-align: left">center</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">justifié</td>
+              <td style="text-align: left">justify</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <strong>A noter</strong> : l’utilisation de l’alignement justifié
+          n’est pas recommandée en termes de bonne pratique d’ergonomie web.
+        </p>
+        <h2>Couleurs</h2>
+        <p>
+          Il existe 3 propriétés pour les couleurs : la couleur du texte, la
+          couleur des bordures et la couleur de fond d’un élément.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Propriété</th>
+              <th style="text-align: left">Fonction</th>
+              <th style="text-align: left">Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">color</td>
+              <td style="text-align: left">Couleur du texte (avant-plan)</td>
+              <td style="text-align: left">#texte { color : #0000000; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">background-color</td>
+              <td style="text-align: left">Couleur d'arrière-plan</td>
+              <td style="text-align: left">
+                #texte { background-color : #0000000; }
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">border-color</td>
+              <td style="text-align: left">Couleur de bordure</td>
+              <td style="text-align: left">
+                #texte { border-color : #000000; }
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>Noms et codes des couleurs</h2>
+        <p>Les couleurs sont exprimées soit par :</p>
+        <ul>
+          <li>
+            leur nom en anglais (black, white, red, yellow, fuschia…) qui
+            parlent d’eux-mêmes ou des variantes un peu plus obscures :
+            burlywood, lightcoral, navajowhite, deepskyblue, gainsboro...
+          </li>
+        </ul>
+        <p>
+          Seulement 16 noms sont reconnus officiellement par le W3C, pour les
+          variantes il convient de s’assurer de leur compatibilité avec les
+          navigateurs, il est alors plus simple d’utiliser les codes
+          hexadécimaux
+        </p>
+        <p>
+          Seulement 16 noms sont reconnus officiellement par le W3C; pour les
+          variantes il convient de s’assurer de leur compatibilité avec les
+          navigateurs, il est alors plus simple d’utiliser les codes
+          hexadécimaux (cf. paragraphe suivant).
+        </p>
+        <ul>
+          <li>
+            des codes hexadécimaux, précédés du signe dièse, allant de #000000
+            (noir) à #FFFFFF (blanc). Exemples : #FF0000 (red), #FF00FF
+            (fuschia), #DEB887 (burlywood).
+          </li>
+        </ul>
+        <p>
+          Les codes hexadécimaux peuvent être abrégés en 3 caractères au lieu de
+          6 : mais les règles d’abréviation sont un peu complexes, on utilise un
+          code abrégé souvent pour les couleurs les plus simples : #000 (noir),
+          #FFF (blanc) ou encore pour les nuances de gris (#CCC, #DDD, #EEE…).
+        </p>
+        <ul>
+          <li>
+            <p>
+              des codes RGB (pour Red Green Blue) où l’on indique par 3 nombres
+              distincts les taux de rouge, de vert et de bleu. Exemple : RGB
+              (255, 255, 0).
+            </p>
+          </li>
+          <li>
+            <p>
+              des <strong>codes HSL</strong> (pour Hue Saturation Lightness) où
+              l’on indique par un nombre puis deux pourcentages les taux de
+              teinte, de saturation et de luminosité. Exemple : hsl(90, 100%
+              ,0%) pour le noir.
+            </p>
+          </li>
+        </ul>
+        <p>
+          Cette méthode est méconnue et surtout beaucoup complexe pour trouver
+          la couleur souhaitée, ce qui explique qu’elle est très peu utilisée.
+        </p>
+        <p>
+          <strong
+            >A retenir : la bonne pratique (et la plus utilisée) est d’utiliser
+            les codes hexadécimaux.</strong
+          >
+        </p>
+        <ul>
+          <li>
+            <p>
+              <a href="http://stylescss.free.fr/couleurs.php"
+                >http://stylescss.free.fr/couleurs.php</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="https://www.w3schools.com/colors/colors_picker.asp"
+                >Palette des couleurs</a
+              >
+            </p>
+          </li>
+        </ul>
+        <h2>Bordures</h2>
+        <p>
+          Les bordures peuvent être définies de façon précise : par exemple une
+          bordure en haut, une bordure à droite.
+        </p>
+        <p>La largeur et la couleur peuvent être indiquées.</p>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Propriété</th>
+              <th style="text-align: left">Fonction</th>
+              <th style="text-align: left">Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">
+                border-top-width,border-right-width,border-bottom-width,border-left-width
+              </td>
+              <td style="text-align: left">
+                Largeur de bordure. La valeur est soit une longueur soit thin,
+                medium ou thick. border-width est un raccourci pour ces quatre
+                spécifications individuelles.
+              </td>
+              <td style="text-align: left">
+                div { border-top-width: medium; border-width: 5px; }
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">border-style</td>
+              <td style="text-align: left">
+                Le style de cadre : dotted (pointillé), dashed (pointillé long),
+                solid, double, groove (creusé), ridge (relief) etc.
+              </td>
+              <td style="text-align: left">div { border-style : dotted; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">
+                border-top-color,border- right-color,border-bottom-
+                color,border-left-color
+              </td>
+              <td style="text-align: left">
+                Couleur de bordure. border-color est un raccourci pour ces
+                quatre spécifications individuelles.
+              </td>
+              <td style="text-align: left">div { border-top-color : #CCC; }</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">border</td>
+              <td style="text-align: left">
+                Les propriétés peuvent être regroupées via l’instruction border
+              </td>
+              <td style="text-align: left">
+                div { border : 5px dashed #CCC; }
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Depuis HTML 5, il est possible de faire des bordures arrondies, grâce
+          à la propriété border-radius.
+        </p>
+        <p>
+          Le degré d’arrondi peut être exprimé en pixels ou en pourcentages.
+        </p>
+        <p>
+          L’arrondi est appliqué à l’arrière-plan (background) et non à la
+          bordure.
+        </p>
+        <pre><code class="language-css">div {
+border: 2px solid red;
+border-radius: 5px; 
+}
+
+footer {
+border-radius: 50% 10% 50% 10%; 
+}</code></pre>
+        <p>
+          <strong>En savoir plus sur</strong>
+          <a href="https://www.w3schools.com/css/css_border.asp"
+            >les bordures</a
+          >
+          et sur
+          <a href="https://developer.mozilla.org/fr/docs/Web/CSS/border-radius"
+            >border-radius</a
+          >.
+        </p>
+        <h2>Dégradés de couleur</h2>
+        <p>
+          Le suffixe <code>–gradient</code> permet d’obtenir des dégradés de
+          couleurs avec 2 possibilités : linéaire (<code>linear-gradient</code>)
+          et circulaire (<code>radial-gradient</code>)
+        </p>
+        <pre><code class="language-css">div {
+background : linear-gradient(to right, white, black);
+}</code></pre>
+        <p>
+          De nombreuses options (direction, angle, empilement, répétition)
+          peuvent être précisées : les dégradés.
+        </p>
+        <h2>Ombres</h2>
+        <p>
+          Les propriétés <code>box-shadow</code> et
+          <code>text-shadow</code> décrivent les ombres appliquées
+          respectivement à la boîte et au texte.
+        </p>
+        <p>
+          Comme pour les dégradés, les options sont nombreuses : suivre ce
+          <a href="https://developer.mozilla.org/fr/docs/Web/CSS/text-shadow"
+            >lien</a
+          >
+          pour en savoir plus.
+        </p>
+        <pre><code class="language-css">div {
+box-shadow : 10px 5 px 5px red;
+text-shadow : 1px 1px 2px pink;
+}</code></pre>
+      </div>
+      <div class="menu-markdown"><img src="/images/menu.png" /></div>
+    </div>
+  </body>
+</html>
+<script>
+  hljs.highlightAll();
+</script>
+<script src="/js/menu-markdown.js"></script>
+<script>
+  document.title = "nCode | " + document.querySelector("h1").textContent;
+</script>

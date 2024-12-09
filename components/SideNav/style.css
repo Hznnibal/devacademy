@@ -1,0 +1,28 @@
+/* Couleurs des sous-menus */
+
+.bg-submenu-hover {
+  background-color: #3b4a5a;
+}
+
+/* Couleurs des items */
+
+.bg-item {
+  background-color: #3b4a5a;
+}
+.bg-item-hover {
+  background-color: #53657d;
+}
+.bg-card {
+  background-color: #ffffff;
+}
+
+/* Accentuation */
+
+.hover\:bg-accent:hover {
+  background-color: #9d9ea0;
+  color: #ffffff;
+}
+.text-accent-foreground {
+  background-color: #9d9ea0;
+  color: #ffffff;
+}

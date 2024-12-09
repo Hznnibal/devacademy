@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/github-markdown.css" />
+    <link rel="stylesheet" href="/css/menu-markdown.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="/highlight.js/styles/stackoverflow-dark.min.css"
+    />
+    <script src="/highlight.js/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="markdown-body">
+        <!-- MAJ : 24/07/2019, HB -->
+        <h1>HTML - 07 - Tableaux</h1>
+        <p>
+          Les tableaux sont très largement utilisés dans le développement de
+          pages web. Ils sont indispensables pour pouvoir présenter
+          l'information de manière structurée et facilement lisible.  
+        </p>
+        <h2>Création d'un tableau</h2>
+        <ul>
+          <li>
+            On crée un tableau à l'aide de la balise
+            <code>&lt;table&gt;</code> et on le ferme via
+            <code>&lt;/table&gt;</code>.
+          </li>
+          <li>
+            Un tableau est composé de plusieurs lignes encadrées par les balises
+            <code>&lt;tr&gt;</code> et <code>&lt;/tr&gt;</code>.
+          </li>
+          <li>
+            Chaque ligne est composée de plusieurs cellules, encadrées par les
+            balises <code>&lt;td&gt;</code> et <code>&lt;/td&gt;</code>.
+          </li>
+        </ul>
+        <p><strong>Exemple de code HTML d'un tableau :</strong></p>
+        <pre><code>&lt;table&gt;
+&lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Pierre&lt;/td&gt;
+        &lt;td&gt;65 800&lt;/td&gt;
+        &lt;td&gt;53 200&lt;/td&gt;
+        &lt;td&gt;46 400&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Paul&lt;/td&gt;
+        &lt;td&gt;88 000&lt;/td&gt;
+        &lt;td&gt;51 500&lt;/td&gt;
+        &lt;td&gt;62 300&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Jacques&lt;/td&gt;
+        &lt;td&gt;74 400&lt;/td&gt;
+        &lt;td&gt;64 200&lt;/td&gt;
+        &lt;td&gt;78 900&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tbody&gt;    
+&lt;/table&gt; </code></pre>
+        <blockquote>
+          <p>
+            Aux débuts du web, on utilisait les tableaux pour la mise en page
+            (structuration en lignes, colonnes). Cet usage est désormais à
+            proscrire, la balise <code>&lt;table&gt;</code> devant être réservée
+            à la présentation de données en tableau (= données tabulaires).
+            Aujourd'hui la structuration et le positionnement des éléments se
+            fait via des balises telles que <code>&lt;div&gt;</code>,
+            <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>,
+            <code>&lt;nav&gt;</code> etc. associées aux feuilles de styles CSS.
+          </p>
+        </blockquote>
+        <h3>Légende</h3>
+        <p>
+          Il est possible d'ajouter un titre (légende) à un tableau via la
+          balise <code>&lt;caption&gt;</code>, qui doit être placée
+          immédiatement sous la balise <code>&lt;table&gt;</code> :
+        </p>
+        <pre><code>&lt;table&gt;
+&lt;caption&gt;Ventes T1&lt;/caption&gt;
+&lt;tr&gt;
+  &lt;td&gt; …</code></pre>
+        <p><strong>Exercice</strong></p>
+        <p>
+          Ajoutez la balise <code>&lt;caption&gt;</code> dans votre fichier
+          HTML.
+        </p>
+        <h2>Mise en forme avancée</h2>
+        <h3>Entêtes et pieds</h3>
+        <h4>Entêtes</h4>
+        <p>
+          L'entête des colonnes, c'est-à-dire chaque cellule de la première
+          ligne qui sert de titre de colonnes est repéré par les balises
+          <code>&lt;th&gt;</code> incluses dans une balise
+          <code>&lt;thead&gt;</code> et une ligne <code>&lt;tr&gt;</code> :
+        </p>
+        <pre><code>&lt;table&gt;
+&lt;caption&gt;Ventes T1&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt; - &lt;/th&gt;
+&lt;th&gt;Janvier&lt;/th&gt;
+&lt;th&gt;Février&lt;/th&gt;
+&lt;th&gt;Mars&lt;/th&gt;
+&lt;/tr&gt; 
+&lt;/thead&gt;</code></pre>
+        <p>
+          Cette balise doit être présente qu'une seule fois par tableau. En cas
+          d'entêtes multiples, il faudra recourir aux balises
+          <code>&lt;colgroup&gt;</code> et <code>&lt;col&gt;</code> (voir à la
+          fin de ce document).
+        </p>
+        <h4>Pieds</h4>
+        <p>
+          La balise <code>&lt;tfoot&gt;</code> permet d'indiquer des cellules en
+          pied de tableau, par exemple un total des valeurs d'une colonne dans
+          un tableau de chiffres :
+        </p>
+        <pre><code>&lt;tfoot&gt;
+&lt;tr&gt;
+ &lt;td&gt;Total&lt;/td&gt;
+ &lt;td&gt;228 200&lt;/td&gt;
+ &lt;td&gt;168 900&lt;/td&gt;
+ &lt;td&gt;187 600&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tfoot&gt;    
+&lt;/table&gt; </code></pre>
+        <p>
+          Cette balise doit être présente qu'une seule fois par tableau. En cas
+          d'entêtes multiples, il faudra recourir aux balises
+          <code>&lt;colgroup&gt;</code> et <code>&lt;col&gt;</code> (voir à la
+          fin de ce document).<br />
+          Contrairement à <code>&lt;thead&gt;</code> qui doit avoir comme
+          balises descendantes <code>&lt;th&gt;</code>,
+          <code>&lt;tfoot&gt;</code> comprend des balises
+          <code>&lt;td&gt;</code>.
+        </p>
+        <h4>La balise <code>&lt;tbody&gt;</code></h4>
+        <p>
+          Les balises <code>&lt;thead&gt;</code> et
+          <code>&lt;tfoot&gt;</code> peuvent être utilisées ensemble ou de façon
+          séparée : l'utilisation se fait en fonction des données du tableau.
+        </p>
+        <p>
+          Par contre, dès lors que l'une des 2 est présente, il convient
+          d'utiliser également la balise <code>&lt;tbody&gt;</code> qui délimite
+          le contenu principal (<em>corps</em>) du tableau :
+        </p>
+        <pre><code>…
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+ &lt;td&gt;Total&lt;/td&gt;
+ &lt;td&gt;228 200&lt;/td&gt;
+ &lt;td&gt;168 900&lt;/td&gt;
+ &lt;td&gt;187 600&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody
+&lt;tfoot&gt; 
+… </code></pre>
+        <p>
+          Comme on le voit, la balise <code>&lt;tbody&gt;</code> se place en
+          toute logique après la fermeture de la balise
+          <code>&lt;thead&gt;</code> et se termine avant l'ouverture de balise
+          <code>&lt;tfoot&gt;</code>.
+        </p>
+        <p><strong>Exercice</strong></p>
+        <p>Ajoutez la balise <code>&lt;tbody&gt;</code> à votre tableau.</p>
+        <h2>Regroupement de lignes/colonnes</h2>
+        <p>
+          On peut regrouper plusieurs lignes ou plusieurs colonnes afin
+          d'obtenir des cellules plus grandes.
+        </p>
+        <h3>L'attribut <code>colspan</code></h3>
+        <p>
+          L'attribut <code>colspan</code> est à appliquer sur une balise de
+          cellule <code>&lt;td&gt;</code> et prend une valeur numérique qui
+          indique le nombre de colonnes à regrouper. La cellule s’étendra sur le
+          nombre de colonnes indiquées comme valeur :
+        </p>
+        <pre><code>&lt;td colspan="4"&gt;Ventes du 1&lt;sup&gt;er&lt;/sup&gt; trimestre&lt;/td&gt;</code></pre>
+        <p><strong>Exercice</strong></p>
+        <p>
+          Reprenez votre fichier HTML et ajoutez le code ci-dessus après votre
+          balise <code>&lt;thead&gt;</code>. Observez ce qui se passe.
+        </p>
+        <h3>L'attribut <code>rowspan</code></h3>
+        <p>
+          L'attribut <code>rowspan</code> est à appliquer sur une balise de
+          cellule <code>&lt;td&gt;</code> et prend une valeur numérique qui
+          indique le nombre de lignes à regrouper. La cellule s'étendra sur le
+          nombre de lignes indiquées comme valeur :
+        </p>
+        <pre><code>&lt;td rowspan="2"&gt;Total&lt;/td&gt;</code></pre>
+        <p><strong>Exercice</strong></p>
+        <p>
+          Reprenez votre fichier HTML, remplacez la ligne concernant Jacques par
+          le code ci-dessous et observez ce qui se passe :
+        </p>
+        <pre><code>  &lt;tr&gt;
+ &lt;td rowspan="2"&gt;Jacques&lt;/td&gt; 
+ &lt;td&gt;74 400&lt;/td&gt;
+ &lt;td&gt;64 200&lt;/td&gt;
+ &lt;td&gt;78 900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;   
+&lt;td&gt;68 100&lt;/td&gt;
+&lt;td&gt;76 700&lt;/td&gt;
+&lt;td&gt;99 500&lt;/td&gt;
+&lt;/tr&gt;  </code></pre>
+        <h2>Habillage de colonnes et de lignes</h2>
+        <p>
+          HTML 5 crée les nouvelles balises <code>&lt;colgroup&gt;</code> et
+          <code>&lt;col&gt;</code> qui permettent, combinées à des feuilles de
+          styles CSS, de grouper via un habillage visuel (et uniquement visuel
+          contrairement à <code>colspan</code> et <code>rowspan</code>) les
+          colonnes d'un tableau. Par exemple, on appliquera une couleur de fond
+          sur les 2 premières colonnes tandis qu'une troisième colonne aura une
+          autre couleur de fond.
+        </p>
+        <blockquote>
+          <p>
+            <a
+              href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_colgroup_test"
+              >Exemple</a
+            >
+          </p>
+        </blockquote>
+        <h2>Exercice</h2>
+        <blockquote>
+          <p>
+            Vous aurez besoin des éléments contenus dans
+            <a
+              target="_blank"
+              href="/ressources/Pool/TB_DEV/WEB_HTML/jarditou_html_zip.zip"
+              >cette archive zip</a
+            >.
+          </p>
+        </blockquote>
+        <p>Reproduisez le tableau suivant :</p>
+        <p>
+          <img
+            src="/ressources/Pool/TB_DEV/WEB_HTML/images\tableau_jarditou_html.JPG"
+            alt="images/HTML_07_tableaux_exercice.jpg"
+          />.
+        </p>
+      </div>
+      <div class="menu-markdown"><img src="/images/menu.png" /></div>
+    </div>
+  </body>
+</html>
+<script>
+  hljs.highlightAll();
+</script>
+<script src="/js/menu-markdown.js"></script>
+<script>
+  document.title = "nCode | " + document.querySelector("h1").textContent;
+</script>

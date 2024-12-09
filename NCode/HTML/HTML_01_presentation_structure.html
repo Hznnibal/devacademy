@@ -1,0 +1,461 @@
+export const HTML_01_presentationStructure = () => {
+  return <div className="container">
+    <div className="markdown-body">
+      <h1>HTML - 01 - Présentation et structure d'un document</h1>
+      <h2>Introduction</h2>
+      <h3>Qu'est-ce que le World Wide Web ?</h3>
+      <p>
+        Le World Wide Web (Web) est un réseau de ressources et d'informations.
+        Le Web repose sur trois mécanismes pour rendre disponibles ces données
+        le plus largement possible :
+      </p>
+      <ol>
+        <li>
+          Un système de nommage uniforme pour leur localisation sur le Web
+          (par exemple les URL) ;
+        </li>
+        <li>
+          Des protocoles, pour accéder à des ressources nommées dont on
+          possède l'adresse (par exemple HTTP) ;
+        </li>
+        <li>
+          L'hypertexte, pour faciliter la navigation entre ces ressources (par
+          exemple HTML).
+        </li>
+      </ol>
+      <h3>Qu'est-ce que le HTML ?</h3>
+      <p>
+        Publier de l'information en vue d'une distribution mondiale nécessite
+        l'usage d'un langage universellement compréhensible, d'une sorte de «
+        langue maternelle » acceptée par tous les ordinateurs. Le langage de
+        publication utilisé sur le World Wide Web est le langage de bali-sage
+        hypertexte HTML (Hyper Text Markup Language). HTML donne aux auteurs
+        les moyens de :
+      </p>
+      <ul>
+        <li>
+          Publier des documents en ligne possédant des titres, du texte, des
+          tables, des listes, des photos, etc.
+        </li>
+        <li>
+          Ramener des informations en ligne via des liens hypertextes avec un
+          clic ;
+        </li>
+        <li>
+          Concevoir des formulaires pour conduire des transactions avec des
+          services distants, dans le but de rechercher des informations, de
+          faire des réservations, de prendre des commandes, etc.
+        </li>
+        <li>
+          Inclure des feuilles de calculs, des séquences vidéos ou sonores et
+          d'autres applica-tions, directement dans les documents.
+        </li>
+      </ul>
+      <p>
+        C'est un langage de balise, qui a comme objectif de représenter de
+        l’information. Ces balises sont interprétables par les différents
+        navigateurs (Internet Explorer/Edge, Firefox, Safari, Opera etc. et
+        permettent l’affichage de l’information désirée.
+      </p>
+      <p>Historique du HTML :</p>
+      <ul>
+        <li>1993 : HTML (1.0)</li>
+        <li>1995 : HTML 2.0</li>
+        <li>1997 : HTML 3.2 et 4.0</li>
+        <li>2000 : XHTML</li>
+        <li>2009 : HTML 5</li>
+      </ul>
+      <h3>HTML 5</h3>
+      <p>Le HTML 5, publié en 2009, est la version actuelle du HTML.</p>
+      <p>Les règles de base du HTML 5 :</p>
+      <ol>
+        <li>Fermer toutes les balises</li>
+        <li>Les balises et les attributs sont toujours en minuscules</li>
+        <li>Les valeurs des attributs sont entre guillemets</li>
+        <li>Tous les attributs ont des valeurs explicites</li>
+        <li>
+          Les balises indiquent la structure du document et non pas sa
+          présentation. Les balises et les attributs de présentation sont
+          remplacés par l'application de styles CSS.
+        </li>
+      </ol>
+      <p>
+        Comme à chaque évolution du langage HTML, le HTML 5 apporte des
+        nouveautés et supprime certaines balises.
+        <a href="https://www.w3schools.com/tags">Cette page</a> liste
+        l'ensemble des balises HTML 5 en précisant les nouvelles et celles
+        devenues obsolètes.
+      </p>
+      <h2>Architecture HTML</h2>
+      <h3>HTML : Un langage de balises sémantique</h3>
+      <p>
+        Le langage HTML est formé de balises (<em>tag</em> en anglais)
+        assemblées afin de déterminer le plan (découpage) d'une page, le
+        <em>document</em>.
+      </p>
+      <p>
+        Une balise possède un nom qui permet de décrire son contenu : on
+        appelle cela un langage sémantique. Par exemple si on utilise la
+        balise <code>&lt;article&gt;</code>, cela indique (suppose) que le
+        texte qu'elle contient est un article.
+      </p>
+      <p>
+        Le nom des balises est inséré entres les signes <code>&lt;</code> et
+        <code>&gt;</code>, lesquels sont appelés chevrons :
+      </p>
+      <p>
+        Exemples : <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>,
+        <code>&lt;article&gt;</code>, <code>&lt;meta&gt;</code>...
+      </p>
+      <p>
+        Certaines balises doivent être ouvertes puis fermées avec le même tag
+        (précédée d'un / pour la fermeture).
+      </p>
+      <p><em>Exemples : </em>.</p>
+      <pre><code>&lt;p&gt;texte&lt;/p&gt;
+
+        &lt;header&gt;autres balises&lt;/header&gt;. </code></pre>
+      <p>
+        Dans d'autres cas, les balises sont dites <em>autofermantes</em>,
+        c'est-à-dire fermées par un simple chevron fermant sans répeter le nom
+        de la balise.
+      </p>
+      <p><em>Exemples : </em>.</p>
+      <pre><code>&lt;br&gt;
+
+        &lt;hr&gt;
+
+        &lt;img&gt;  </code></pre>
+      <blockquote>
+        <p>
+          En HTML, la casse (lettres minuscules ou majuscules), n'a aucune
+          importance. La bonne pratique est toutefois d'écrire les balises en
+          minuscule.
+        </p>
+      </blockquote>
+      <p>
+        Une balise possède des attributs, ce sont des paramètres
+        supplémentaires à appliquer spécifiquement à la balise. Un attribut a
+        un nom, auquel on affecte une valeur (une chaîne entre guillemets) via
+        l’opérateur <code>=</code> :
+      </p>
+      <ul>
+        <li>
+          <code>&lt;p id="intro"&gt;</code> : balise paragraphe avec un seul
+          attribut, l'attribut <code>id</code> (identifiant unique)
+        </li>
+        <li>
+          <code>&lt;p id="intro" class="rouge"&gt;</code> : balise paragraphe
+          plusieurs attributs, <code>id</code> et <code>class</code>.
+        </li>
+      </ul>
+      <p>
+        Selon la balise, il y a des attributs obligatoires ou facultatifs.
+        Certains attributs peuvent rece-voir une valeur librement définie par
+        le développeur (comme les attributs <code>id</code> et
+        <code>class</code> ci-dessus), d'autres doivent avoir une valeur
+        proposée par les spécifications du HTML (W3C).
+      </p>
+      <p><strong>Le nombre d'attributs peut donc être variable</strong>.</p>
+      <p>
+        Certaines balises peuvent être <strong>imbriquées</strong>, cela forme
+        un <strong>ensemble hiérarchique</strong> appelé <em>balisage</em>, on
+        a donc des balises <em>enfant</em> d'autres balises. La hiérarchie
+        peut s’établir sur plusieurs niveaux.
+      </p>
+      <p>Les balises imbriquées peuvent être multiples et différentes.</p>
+      <p>
+        Exemple 1 : une liste d'options : les balises
+        <code>&lt;li&gt;</code> (= list item) héritent de la balise
+        <code>&lt;ul&gt;</code> (= unordered list) :
+      </p>
+      <pre><code>&lt;ul&gt;
+        &lt;li&gt;1er élément&lt;/li&gt;
+        &lt;li&gt;2ème élément&lt;/li&gt;
+        &lt;li&gt;3ème élément&lt;/li&gt;
+        &lt;/ul&gt;</code></pre>
+      <p>
+        Exemple 2 : des paragraphes et un <code>&lt;div&gt;</code> inclus dans
+        un <code>&lt;div&gt;</code> :
+      </p>
+      <div>
+        <p>Texte du 1er paragraphe</p>
+        <p>Texte du 2ème paragraphe</p>
+      </div>
+      <h2>Structure d'un document HTML</h2>
+      <p>
+        Un document HTML 5 se compose de plusieurs parties dont
+        <strong>l'ordre est à respecter</strong>.
+      </p>
+      <p>
+        Une ligne de déclaration de type contenant les informations de la
+        version HTML de la page : en HTML 5, cette déclaration doit être
+        <code>&lt;!DOCTYPE html&gt;</code>
+      </p>
+      <blockquote>
+        <p>Attention : la casse de cette balise est à respecter.</p>
+      </blockquote>
+      <ul>
+        <li>Un élément <code>&lt;html&gt;</code> qui comprend :</li>
+        <li>
+          Une section en-tête déclarative (enclose par la balise
+          <code>&lt;head&gt;</code>)
+        </li>
+        <li>
+          Un corps, qui emporte le contenu effectif du document. Le corps est
+          généralement enclos par l'élément <code>&lt;body&gt;</code>
+        </li>
+      </ul>
+      <p>
+        Chaque balise <code>&lt;head&gt;</code> ou
+        <code>&lt;body&gt;</code> peut elle-même contenir des balises
+        incluses.
+      </p>
+      <p>Voici un exemple de document HTML 5 simple :</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang="fr"&gt;
+        &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;Ma première page en HTML 5&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;h1&gt;Le HTML 5&lt;/h1&gt;
+        &lt;p&gt;Le langage HTML, c'est fantastique.&lt;/p&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</code></pre>
+      <blockquote>
+        <p>
+          Attention : en HTML 5, toutes les balises ainsi que leurs attributs
+          doivent être en minuscule (sauf <code>DOCTYPE</code>).
+        </p>
+      </blockquote>
+      <p>
+        Dans la balise <code>&lt;html&gt;</code>, ne pas omettre l'attribut
+        lang qui permet d'indiquer la langue dans laquelle la page web est
+        rédigée aux robots de référencement ou aux logiciels de synthèse
+        vocale.
+      </p>
+      <h2>Entête du document : <code>&lt;head&gt;&lt;/head&gt;</code></h2>
+      <p>
+        Le bloc <code>&lt;head&gt;&lt;/head&gt;</code> contient des
+        informations sur le document courant, tels que son titre, des
+        mots-clés que les moteurs de recherche peuvent exploiter et qui
+        permettront d'indexer (référencer) votre site, et d'autres données qui
+        ne sont pas considérées comme faisant partie du contenu du document :
+        ce sont des métadonnées qui, pour leur grande majorité, seront
+        contenues dans des balises <code>&lt;meta&gt;</code>.
+      </p>
+      <p>
+        Les balises de la partie <code>&lt;head&gt;</code> ne sont pas
+        affichées par le navigateur à l'internaute, à l'exception de la balise
+        <code>&lt;title&gt;</code> qui apparaît dans les onglets du navigateur
+        et dans les moteurs de recherche et de la meta « description » reprise
+        elle aussi par les moteurs de recherche (ci-dessous, copie d'écran de
+        la page de résultats de Google) :
+      </p>
+      <p>
+        Cependant, le contenu de la partie <code>&lt;head&gt;</code> est
+        visible dans le code source (<code>Ctrl</code>+<code>U</code> dans un
+        navigateur). Il ne doit donc pas contenir d’informations sensibles
+        pouvant compromettre la sécurité de votre site.
+      </p>
+      <h2>Les balises <code>&lt;meta&gt;</code></h2>
+      <h3>Principe</h3>
+      <p>
+        Les balises <code>&lt;meta&gt;</code> permettent de fournir ce que
+        l'on appelle des metadonnées d'une page web, c'est-à-dire des
+        indications supplémentaires différentes du contenu de la page.
+      </p>
+      <h3>Evolution des balises <code>&lt;meta&gt;</code></h3>
+      <p>
+        Certaines balises <code>&lt;meta&gt;</code> sont obligatoires,
+        d'autres sont facultatives et certaines (par exemple
+        <code>keywords</code>, <code>refresh</code>) ont désormais une utilité
+        controversée ou obsolète.
+      </p>
+      <h3>Obligatoire : la balise meta <code>charset</code></h3>
+      <p>
+        La balise <code>&lt;meta charset&gt;</code> permet de spécifier aux
+        navigateurs l'encodage de la page web. La valeur standard est
+        l'<strong>utf-8</strong> :
+      </p>
+      <pre><code>&lt;meta charset="utf-8"&gt;</code></pre>
+      <p>
+        Spécifier en UTF-8 évite de se retrouver avec des problèmes de
+        caractères spéciaux ou d'accents mal affichés du genre
+        <code>aprÃ¨s avoir Ã©tÃ© lancÃ©</code>.
+      </p>
+      <p>
+        Cette balise doit donc se trouver avant tout texte affiché à
+        l'internaute, soit en pratique avant la balise
+        <code>&lt;title&gt;</code> (et donc immédiatement après la balise
+        d’ouverture <code>&lt;head&gt;</code>).
+      </p>
+      <h3>la balise meta <code>viewport</code></h3>
+      <p>
+        La balise <code>&lt;meta viewport&gt;</code> permet de contrôler la
+        mise en page sur les navigateurs mobiles :
+      </p>
+      <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+      <h2>La balise <code>&lt;title&gt;</code></h2>
+      <p>
+        Dans l'ordre, après les balises <code>doctype</code>,
+        <code>html</code>, <code>head</code> et <code>meta charset</code>, on
+        trouve la balise <code>&lt;title&gt;</code> dans laquelle vous devez
+        indiquer le titre de votre document.
+      </p>
+      <p>
+        Comme nous l'avons vu plus haut, la balise
+        <code>&lt;title&gt;</code> est absolument essentielle pour le
+        référencement, c'est celle qui est prise en compte en priorité par
+        Google.
+      </p>
+      <p>Exemple</p>
+      <pre><code>&lt;title&gt;Ma première page HTML&lt;/title&gt;</code></pre>
+      <h2>La balise <code>&lt;link&gt;</code></h2>
+      <p>
+        L'élément HTML <code>&lt;link&gt;</code> définit la relation entre le
+        document courant et une ressource externe (CSS, icône). Cet élément
+        peut être utilisé pour définir un lien vers une feuille de style ou un
+        cadre de navigation (accéder à la même page dans une langue différente
+        par exemple).
+      </p>
+      <p>
+        Cette balise est principalement utilisée pour lier les feuilles de
+        styles CSS (que nous aborderons à la séquence suivante) à la page web
+        :
+      </p>
+      <pre><code>`&lt;link href="style.css" rel="stylesheet"&gt;`</code></pre>
+      <blockquote>
+        <p>
+          Contrairement aux balises vues jusqu'ici, il est possible d'avoir
+          plusieurs <code>&lt;link&gt;</code> car il en faut une par ressource
+          appelée.
+        </p>
+      </blockquote>
+      <h2>Le corps du document: <code>&lt;body&gt;&lt;/body&gt;</code></h2>
+      <p>
+        Le contenu réel de la page (textes, images, tableaux etc.) affiché à
+        l'internaute se trouve dans le bloc
+        <code>&lt;body&gt;&lt;/body&gt;</code> : c'est le corps du document.
+      </p>
+      <p><em>Exemple :</em></p>
+      <pre><code>&lt;body&gt;
+        &lt;h1&gt;Mon contenu&lt;/h1&gt;
+        &lt;p&gt;Le HTML 5 c’est fantastique.&lt;/p&gt;
+        &lt;/body&gt;</code></pre>
+      <p>La partie <code>&lt;body&gt;</code> accueille à la fois :</p>
+      <ul>
+        <li>
+          les éléments (balises) qui structurent la page (colonnes, blocs,
+          paragraphes, menus, entête, pied de page etc.)
+        </li>
+        <li>
+          les éléments relevant davantage du formatage (mise en exergue, gras,
+          italique, citations, médias etc.).
+        </li>
+      </ul>
+      <blockquote>
+        <p>Ces différentes balises seront vues au prochain chapitre.</p>
+      </blockquote>
+      <h2>Commentaires</h2>
+      <p>
+        Vous pouvez commenter votre code source, l'internaute ne verra pas ce
+        commentaire.
+      </p>
+      <p>Exemple :</p>
+      <pre><code>&lt;!-- Ceci est un commentaire --&gt; </code></pre>
+      <blockquote>
+        <p>
+          Les commentaires seront visibles dans le code source HTML de votre
+          page (afficher la page dans un navigateur puis touches
+          <code>Ctrl</code> + <code>U</code>). Par conséquent, éviter trop
+          d’indications pouvant compromettre la sécurité.
+        </p>
+      </blockquote>
+      <p>
+        Les commentaires seront affichés dans le code source de la page. Par
+        conséquent, évitez trop d'indications pouvant compromettre la
+        sécurité.
+      </p>
+      <p>
+        Pour voir le code source d'une page, afficher la page dans un
+        navigateur web puis touches <code>Ctrl</code> + <code>U</code> ou, si
+        vous connaissez déjà, inspectez-le via les outils de développement des
+        navigateurs (vus plus loin dans la formation).
+      </p>
+      <h2>Travail à réaliser</h2>
+      <ul>
+        <li>
+          A l'aide d'un éditeur de texte, saisissez le code HTML indiqué dans
+          la section
+          <em>Architecture HTML &gt; Structure d'un document HTML</em>.
+        </li>
+        <li>
+          Enregistrez le fichier en lui donnant l'extension
+          <code>.html</code>, puis visualisez-le à l'aide d'un navigateur web.
+        </li>
+        <li>
+          Dans votre page web, testez les différentes balises vues dans cette
+          séquence.
+        </li>
+      </ul>
+      <h2>Debut d'une page html en resumé</h2>
+      {/* <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+        &lt;html lang="fr"&gt;
+
+        &lt;!-- Debut de la balise head --&gt;
+
+        &lt;head&gt;
+
+        &lt;!-- Encodage UTF-8 conçu pour coder l'ensemble des caractères --&gt;
+        &lt;meta charset="UTF-8"&gt;
+
+        &lt;!-- Permet d’indiquer comment le navigateur doit afficher la page sur différents appareils --&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=7"&gt;
+
+        &lt;!-- La balise meta-description est très importante en référencement naturel, elle doit être utile, attrayante et persuasive --&gt;
+        &lt;meta name="description" content="Description de mon site" /&gt;
+
+        &lt;!-- L'Élément title utile et obligatoire --&gt;
+        &lt;title&gt;Titre de mon onglet&lt;/title&gt;
+        &lt;!-- Icone de l'onglet Attention l'extension de l'image doit être en .ico--&gt;
+        &lt;link rel="icon" href="Logo_Afpa.ico" /&gt;
+
+        &lt;!-- On relie ensuite nos feuilles de styles CSS --&gt;
+        &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+
+        &lt;!-- Ajout de la police 'Concert One' depuis https://fonts.google.com/ --&gt;
+        &lt;link href="https://fonts.googleapis.com/css?family=Concert+One&amp;display=swap" rel="stylesheet"&gt;
+
+        &lt;/head&gt;
+        &lt;!-- Fin de la balise head --&gt;
+
+        &lt;!-- --------------------------------------------------------------------------------------------------------- --&gt;
+        &lt;!-- N'oubliez pas de commenter votre code ! Utile pour les petits et les gros projets, en solo ou en équipe ! --&gt;
+        &lt;!-- --------------------------------------------------------------------------------------------------------- --&gt;
+
+        &lt;!-- Debut de la balise body --&gt;
+
+        &lt;body&gt;
+        &lt;!-- --------------------------------------------------------------------------------------------------------- --&gt;
+        &lt;!-- Tout le contenu de votre page web se situera entre votre balise body --&gt;
+        &lt;!-- --------------------------------------------------------------------------------------------------------- --&gt;
+
+        &lt;!-- Fin de la balise body --&gt;
+        &lt;/body&gt;
+        &lt;!-- Fin du document HTML --&gt;
+        &lt;/html&gt;</code></pre> */}
+      <p>
+        <br />
+        <br />
+        <br />
+      </p>
+    </div>
+    {/* <div class="menu-markdown"><img src="/images/menu.png" /></div> */}
+  </div>
+}
+
+export default HTML_01_presentationStructure;

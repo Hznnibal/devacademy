@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/github-markdown.css" />
+    <link rel="stylesheet" href="/css/menu-markdown.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="/highlight.js/styles/stackoverflow-dark.min.css"
+    />
+    <script src="/highlight.js/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="markdown-body">
+        <h1><strong>CSS : Les sélecteurs</strong></h1>
+        <h1>Sélecteurs de base</h1>
+        <p>Considérons la déclaration de style suivante :</p>
+        <pre><code class="language-css">body {
+ background-color:# FFFFCC;
+ margin-left: 100px;
+}
+
+h1 {
+ font-size: 48pt;
+ color :#FF0000;
+ font-style: italic;
+ border-bottom: solid thin black;
+}
+
+p {
+ font-size: 12pt;
+ line-height: 14pt;
+ font-family: Arial;
+ letter-spacing: 0.2mm;
+ word-spacing: 0.8mm;
+ color: blue;
+}</code></pre>
+        <p>On déclare des sélecteurs : ici body, h1 ou p.</p>
+        <p>
+          Par &quot;sélecteur&quot; on entend ce qui se trouve devant les
+          accolades.
+        </p>
+        <p>
+          Le sélecteur désigne quelle balise sera affectée par les propriétés
+          qui suivent.
+        </p>
+        <p>Les sélecteurs peuvent être une (ou plusieurs) balises HTML.</p>
+        <p>
+          Le sélecteur peut être le nom d’une balise HTML, le nom d’une classe
+          ou encore l’identifiant d’un élément HTML défini par l’attribut id.
+          Enfin, il existe un sélecteur universel.
+        </p>
+        <h2>Le nom d’une balise HTML :</h2>
+        <p><code>body h1 p</code></p>
+        <p>
+          C’est le cas de l’exemple ci-dessus. h1 {...} : concerne toutes les
+          balises <code>&lt;h1&gt;</code>.
+        </p>
+        <h2>Le nom d’une classe (commence par un point) :</h2>
+        <p><code>.fondrouge .cadrevert</code></p>
+        <p>
+          On peut aussi définir des sélecteurs qui nous sont propres (et que
+          l’on appellera par l’attribut class).
+        </p>
+        <p>
+          Ces sélecteurs ne concernent pas forcément une balise ou un ensemble
+          de balise, mais uniquement les éléments qui seront marqués comme
+          devant appliquer le style défini.
+        </p>
+        <p>Le marquage se fait par l’attribut HTML class.</p>
+        <p>Par exemple :</p>
+        <pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+    &lt;style&gt;
+    .one {
+    color: red;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3 class="one"&gt;Titre rouge&lt;/h3&gt;
+    &lt;h3&gt;Titre normal&lt;/h3&gt;
+    &lt;p class="one"&gt;Texte écrit en rouge&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>
+          Dans cet exemple, on définit un style nommé <code>one</code>, qui va
+          s’appliquer à toutes les balises dans lesquelles on retrouve
+          l’attribut class=&quot;one&quot;.
+        </p>
+        <h2>L’ID de l’élément (<code>#</code>):</h2>
+        <p><code>#one</code></p>
+        <p>
+          Dans ce cas, le style s‘applique à la balise portant un identifiant
+          <strong>unique</strong> correspondant au sélecteur (sans le dièse). En
+          HTML l’attribut id permet de spécifier le nom de l’identifiant.
+        </p>
+        <pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+    &lt;style&gt;
+    #one {
+    background-color: silver;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3 id="one"&gt;Titre rouge&lt;/h3&gt;
+    &lt;h3&gt;Titre normal &lt;/h3&gt;
+    &lt;p class="one"&gt;Texte écrit en rouge&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>
+          <span style="color: red">
+            <strong>Attention</strong> : dans une page web, un attribut id doit
+            porter un nom unique (valeur). Il ne peut donc y avoir plusieurs
+            balises portant le même nom d’id.
+          </span>
+        </p>
+        <p>
+          Par contre, on remarque dans l’exemple qu’un id peut porter le même
+          nom qu’une classe : <code>#one</code> et <code>.one</code>.
+        </p>
+        <p>
+          Toutefois, dans la pratique, ceci est à éviter afin d’éliminer tout
+          risque de confusion.
+        </p>
+        <h2>Le sélecteur universel</h2>
+        <p>L'astérisque (*) est le sélecteur universel en CSS.</p>
+        <p>
+          S’il est utilisé seul, comme dans l’exemple ci-dessous, il correspond
+          à un élément de n'importe quel type et s’applique donc à tous les
+          éléments de votre page web.
+        </p>
+        <pre><code class="language-css">* {
+    color: red;
+}</code></pre>
+        <p>
+          Mais le sélecteur universel est surtout employé pour sélectionner tous
+          les éléments d’un même type :
+        </p>
+        <pre><code class="language-css">* p {
+    color: red;
+}</code></pre>
+        <p>
+          Cet exemple sélectionne toutes les balises <code>&lt;p&gt;</code> pour
+          leur appliquer la couleur rouge.
+        </p>
+        <p>
+          Si le sélecteur universel concerne un élément unique, il devient alors
+          facultatif :
+        </p>
+        <ul>
+          <li>
+            <p>*.warning et .warning sont équivalents.</p>
+          </li>
+          <li>
+            <p>*#myid et #myid sont équivalents.</p>
+          </li>
+        </ul>
+        <h1>Sélection multiple</h1>
+        <p>
+          Il est possible de combiner plusieurs sélecteurs, ce qui permet
+          d’appliquer aux différents éléments sélectionnés les mêmes
+          instructions CSS.
+        </p>
+        <p>
+          Les instructions CSS s’appliqueront alors à tous les éléments
+          sélectionnés.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Sélecteur</th>
+              <th style="text-align: left">Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">Plusieurs balises HTML</td>
+              <td style="text-align: left">
+                p, h1, div { color : red; font-size : 12%; border-bottom: solid
+                thin black;}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Plusieurs classes</td>
+              <td style="text-align: left">
+                .classe1, .classe2, .classe3 { color : red; font-size : 12%;
+                border-bottom: solid thin black;}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">Plusieurs id</td>
+              <td style="text-align: left">
+                #one, #two, #three { color : red;font-size : 12%; border-bottom:
+                solid thin black;}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Il est aussi possible de combiner des sélecteurs de différents types;
+          c’est-à-dire à la fois des balises HTML, des classes et des ID ::
+        </p>
+        <pre><code class="language-css">h1, classe1, #one {
+ color: red;
+}</code></pre>
+        <h1>Autres sélecteurs</h1>
+        <p>
+          A titre d’information, sachez que les sélecteurs suivants existent
+          également :
+        </p>
+        <ul>
+          <li>
+            des sélecteurs d’enfants (signe « &gt; ») qui permettent de cibler
+            des éléments fils
+          </li>
+          <li>
+            des combinateurs d’adjacence (signe « + » ) qui permettent de cibler
+            des éléments frères (= voisins)
+          </li>
+          <li>
+            des sélecteurs d’attributs (signe « []») qui permettent de cibler
+            une balise HTML en fonction de la présence d’un attribut ou de la
+            valeur donnée à un attribut
+          </li>
+        </ul>
+        <h1>Les pseudo-classes</h1>
+        <p>
+          Une <strong>pseudo-classe</strong> est un mot-clé qui peut être ajouté
+          à un sélecteur afin d'indiquer l'état (= statut) spécifique dans
+          lequel l'élément doit se trouver pour être ciblé par la déclaration.
+        </p>
+        <p>
+          Une pseudo-classe commence par le signe « : » et suit immédiatement le
+          sélecteur :
+        </p>
+        <p>Exemple</p>
+        <pre><code class="language-css">a:hover {
+ color: red;
+}</code></pre>
+        <p>
+          Dans cet exemple, le texte des liens deviendra rouge au survol de la
+          souris.
+        </p>
+        <p>
+          Une pseudo-classe ne s’applique pas forcément à toutes les balises
+          HTML, certaines sont spécifiques à un seul élément. Par exemple les
+          pseudo-classes les plus utilisées concernent les liens (comme dans
+          l’exemple ci-dessus) ou le curseur de la souris (changement de la
+          forme du curseur).
+        </p>
+        <ul>
+          <li>
+            <p>
+              Certaines pseudo-classes se terminent par des parenthèses, par
+              exemple : nth-child().
+            </p>
+          </li>
+          <li>
+            <p>
+              Certaines pseudo-classes ne sont pas interprétées par tous les
+              navigateurs web. Il est donc nécessaire de s’assurer de leur
+              compatibilité. Les pseudo-classes évoquées dans ce document sont
+              toutes compatibles avec les navigateurs courants.
+            </p>
+          </li>
+        </ul>
+        <h2>Les pseudo-classes pour les liens</h2>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Nom de la pseudo-classe</th>
+              <th style="text-align: left">Rôle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">:active</td>
+              <td style="text-align: left">
+                lien actif = en train d'être cliqué
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">:focus</td>
+              <td style="text-align: left">lien qui devient actif (focus)</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">:hover</td>
+              <td style="text-align: left">lien au survol de la souris</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">:link</td>
+              <td style="text-align: left">
+                lien non encore visité (état par défaut d’un lien, affiché en
+                bleu)
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">:visited</td>
+              <td style="text-align: left">
+                lien déjà visité (s’affiche par défaut en violet)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>Autres pseudo-classes courantes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Nom de la pseudo-classe</th>
+              <th style="text-align: left">Rôle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">:not(balise html)</td>
+              <td style="text-align: left">
+                sélectionne toutes les balises HTML à l’exclusion de celle(s)
+                passée(s) en argument
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">:first-child</td>
+              <td style="text-align: left">
+                Sélectionne le premier fils de l’élément HTML
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">:last-child</td>
+              <td style="text-align: left">
+                Sélectionne le dernier fils de l’élément HTML
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">:nth-child(numéro)</td>
+              <td style="text-align: left">
+                Accès à l’élément fils du numéro passé en argument
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-classes#Liste_des_pseudo-classes_standards"
+            >Documentation des speudos-classes</a
+          >
+        </p>
+        <h1>Les pseudo-éléments</h1>
+        <p>
+          Un <strong>pseudo-élément</strong> est un mot-clé ajouté à un
+          sélecteur qui permet de mettre en forme certaines parties de l'élément
+          ciblé.
+        </p>
+        <p>
+          Un pseudo-élément est précédé du signe « :: » (deux points-virgules,
+          <strong>Attention</strong> ne pas confondre avec le « : » d’une
+          pseudo-classe).
+        </p>
+        <p>Exemple</p>
+        <pre><code class="language-css">a::before {
+ content: "*";
+}</code></pre>
+        <p>Ici, le signe « * » sera ajouté avant chaque lien.</p>
+        <p>
+          Les pseudos-éléments les plus rencontrés sont ::before et ::after,
+          permettant d’ajouter du contenu avant ou après un élément HTML.
+        </p>
+        <p>
+          <strong>Attention</strong> Certaines pseudo-classes ne sont pas
+          interprétées par tous les navigateurs web. Il est donc nécessaire de
+          s’assurer de leur compatibilité.
+        </p>
+        <p>
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-%C3%A9l%C3%A9ments#Liste_des_pseudo-%C3%A9l%C3%A9ments"
+            >Documentation des pseudo-éléments</a
+          >
+        </p>
+        <h1>Exercices : A toi de jouer !</h1>
+        <p><a href="https://flukeout.github.io/">CSS Diner</a></p>
+        <h1>A retenir</h1>
+        <p>
+          En CSS, les sélecteurs permettent de cibler les éléments sur lesquels
+          on souhaite travailler.
+        </p>
+        <p>
+          Il existe 3 types majeurs de sélecteurs : les balises, HTML, les
+          classes et identifiants (« id »).
+        </p>
+        <p>Ceux-ci peuvent être mélangés (sélection multiple).</p>
+        <p>
+          Des instructions CSS plus poussées (combinateurs, pseudo-classes ou
+          pseudo-éléments) complètent l’utilisation des sélecteurs pour des
+          ciblages plus précis.
+        </p>
+      </div>
+      <div class="menu-markdown"><img src="/images/menu.png" /></div>
+    </div>
+  </body>
+</html>
+<script>
+  hljs.highlightAll();
+</script>
+<script src="/js/menu-markdown.js"></script>
+<script>
+  document.title = "nCode | " + document.querySelector("h1").textContent;
+</script>
