@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { Button } from "@/components/ui/button";
 import {
@@ -10,9 +10,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { Bell, GraduationCap, User } from "lucide-react";
+import { GraduationCap, Moon, Sun, User } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { href: "/learning-path", label: "Parcours d'apprentissage" },
@@ -21,8 +22,47 @@ const navLinks = [
   { href: "/resources", label: "Ressources" },
 ];
 
-export function Navbar() {
+export function Navbar({ toggleLanguage, currentLanguage }: { toggleLanguage: () => void, currentLanguage: 'en' | 'ar' }) {
   const pathname = usePathname();
+  const [darkMode, setDarkMode] = useState<boolean>(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+    } else {
+      setDarkMode(false);
+      document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const changeLanguageAndRedirect = () => {
+    const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+    toggleLanguage(); // Mise à jour de la langue
+
+    // Redirige vers la page dans la langue correcte
+    router.push(newLanguage === 'ar' ? "/ar/intro/intro/introduction" : "/en/intro/intro/introduction");
+  };
 
   return (
     <div className="bg-card/80 backdrop-blur-sm border-b fixed top-0 left-0 w-full z-50">
@@ -30,7 +70,9 @@ export function Navbar() {
         <div className="h-16 px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <GraduationCap className="h-6 w-6 text-primary" />
-            <span className="text-lg font-semibold">DevAcademy</span>
+            <Link href="/" className="text-xl font-bold">
+              DevAcademy
+            </Link>
           </div>
 
           <nav className="flex items-center space-x-4">
@@ -52,11 +94,6 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon" className="relative">
-              <Bell className="h-5 w-5" />
-              <span className="absolute top-1 right-1 h-2 w-2 bg-destructive rounded-full" />
-            </Button>
-
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative h-9 w-9 rounded-full">
@@ -72,6 +109,19 @@ export function Navbar() {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="text-destructive">
                   Déconnexion
+                </DropdownMenuItem>
+
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={toggleDarkMode} className="flex items-center gap-2">
+                  {darkMode ? (
+                    <Sun className="h-5 w-5" />
+                  ) : (
+                    <Moon className="h-5 w-5" />
+                  )}
+                </DropdownMenuItem>
+
+                <DropdownMenuItem onClick={changeLanguageAndRedirect} className="flex items-center gap-2">
+                  {currentLanguage === 'en' ? 'Switch to Arabic' : 'Switch to English'}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

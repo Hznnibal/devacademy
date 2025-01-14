@@ -1,0 +1,123 @@
+
+Envoyer des mails avec PHPMailer
+
+PHPMailer est une bibliothèque open source pour envoyer des e-mails en utilisant PHP. C'est une alternative à la fonction mail() de PHP et offre des fonctionnalités supplémentaires telles que l'envoi de pièces jointes, la prise en charge de SMTP, la gestion des erreurs et la personnalisation des e-mails.
+
+Afin d'utiliser PHPMailer pour envoyer des e-mails, il nous faut suivre quelques étapes:
+
+    Installation
+    La première étape consiste à installer PHPMailer. La bibliothèque PHPMailer est disponible sur Packagist et peut être installée via le gestionnaire de dépendances Composer. Pour installer PHPMailer, exécutez la commande suivante dans votre terminal :
+
+composer require phpmailer/phpmailer
+
+    Si vous n'avez pas installé Composer, rendez-vous sur le site composer et suivez les instructions.
+
+ensuite, placez-vous dans le répertoire de votre projet pour créer un fichier de configuration de composer:
+
+composer init
+
+et à la fin installer phpmailer
+
+composer require phpmailer/phpmailer
+
+    Configuration
+    Avant d'utiliser PHPMailer, nous devons configurer notre serveur SMTP pour envoyer des e-mails. Nous allons utiliser le serveur local MailHog.
+
+        Pour rappel, MailHog est un outil qui permet de capturer les e-mails envoyés depuis un serveur SMTP et de les afficher dans une interface Web (donc sans risquer d'envoyer des e-mails à des recipients réels). Si vous n'avez pas encore installé MailHog, les instructions sont à retrouver ici.
+
+    Import de l'autoload
+    Pour avoir accès à PHPMailer, nous devons importer l'autoload de cette classe. L'autoload permet de charger automatiquement les classes nécessaires à l'exécution de PHPMailer. Pour importer l'autoload, ajoutez le code suivant en haut de votre fichier :
+
+<?php
+
+require_once 'vendor/autoload.php';
+
+    Création d'un object Mailer
+    Nous pouvons maintenant créer un object PHPMailer et l'utiliser pour envoyer des e-mails :
+
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require_once 'vendor/autoload.php';
+
+$mail = new PHPMailer(true);
+
+// On va utiliser le SMTP
+$mail->isSMTP();
+
+// On configure l'adresse du serveur SMTP
+$mail->Host       = 'localhost';    
+
+// On désactive l'authentification SMTP
+$mail->SMTPAuth   = false;    
+
+// On configure le port SMTP (MailHog)
+$mail->Port       = 1025;                                   
+
+// Expéditeur du mail - adresse mail + nom (facultatif)
+$mail->setFrom('from@thedistrict.com', 'The District Company');
+
+// Destinataire(s) - adresse et nom (facultatif)
+$mail->addAddress("client1@example.com", "Mr Client1");
+$mail->addAddress("client2@example.com"); 
+
+//Adresse de reply (facultatif)
+$mail->addReplyTo("reply@thedistrict.com", "Reply");
+
+//CC & BCC
+$mail->addCC("cc@example.com");
+$mail->addBCC("bcc@example.com");
+
+// On précise si l'on veut envoyer un email sous format HTML 
+$mail->isHTML(true);
+
+// On ajoute la/les pièce(s) jointe(s)
+$mail->addAttachment('/path/to/file.pdf');
+
+// Sujet du mail
+$mail->Subject = 'Test PHPMailer';
+
+// Corps du message
+$mail->Body = "On teste l'envoi de mails avec PHPMailer";
+
+// On envoie le mail dans un block try/catch pour capturer les éventuelles erreurs
+if ($mail){
+    try {
+        $mail->send();
+        echo 'Email envoyé avec succès';
+        } catch (Exception $e) {
+        echo "L'envoi de mail a échoué. L'erreur suivante s'est produite : ", $mail->ErrorInfo;
+        }
+    }
+
+    Explication : Dans cet exemple, nous avons créé un object PHPMailer et configuré le serveur SMTP pour utiliser localhost et le port 1025, qui sont les paramètres par défaut de MailHog. Nous avons également défini l'expéditeur, les recipients, le sujet et le corps du message et ajouté une pièce jointe. Enfin, nous avons utilisé la méthode send() pour envoyer le mail.
+
+Exécutez votre script PHPMailer pour envoyer un mail à MailHog.
+
+Ouvrez votre navigateur Web et accédez à l'interface Web de MailHog en utilisant l'URL http://localhost:8025/.
+
+Dans l'interface MailHog, vous devriez voir le mail que vous venez d'envoyer.
+Conclusion
+
+Même si la fonction mail() de PHP est très simple à utiliser, elle n'offre pas beaucoup de fonctionnalités, comme l'envoi de pièces jointes ou la personnalisation des e-mails. De plus, elle peut être affectée par des problèmes de sécurité, tels que le spamming et le piratage.
+
+En revanche, PHPMailer offre de nombreuses fonctionnalités, telles que l'envoi de pièces jointes, la personnalisation des e-mails, la gestion des erreurs et la prise en charge de SMTP. Cette bibliothèque est également plus sécurisée que la fonction mail() de PHP, car elle utilise des techniques avancées pour éviter le spamming et le piratage.
+Attention à l'emplacement des lignes commençant par use
+
+Il est important de placer les deux lignes use au début de votre script PHPMailer, car elles permettent d'importer les classes PHPMailer et Exception.
+
+En PHP, l'instruction use est utilisée pour importer des classes dans votre script. Elle vous permet d'utiliser ces classes sans avoir à spécifier leur nom de manière explicite à chaque fois que vous les utilisez dans votre script. Au lieu de cela, vous pouvez simplement utiliser leur nom court pour accéder à leurs méthodes et propriétés.
+
+Par exemple :
+
+
+$mail = new \PHPMailer\PHPMailer\PHPMailer();
+
+Avec les instructions use, vous pouvez simplement utiliser :
+
+
+$mail = new PHPMailer();
+
+Cela simplifie considérablement votre code et le rend plus facile à lire et à comprendre.
