@@ -1,0 +1,44 @@
+version: "3.8"
+services:
+  nextjs:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - stripe
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/mydb
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+    networks:
+      - mynetwork
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+  stripe:
+    image: stripe/stripe-cli
+    environment:
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+    command:
+      ["listen", "--forward-to", "http://nextjs:3000/api/stripe/webhooks"]
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+
+volumes:
+  pgdata:

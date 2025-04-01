@@ -1,0 +1,256 @@
+{
+  "login": {
+    "title": "Se connecter",
+    "subtitle": "Bienvenue de retour ! Veuillez entrer vos informations.",
+    "emailPlaceholder": "Entrez votre email",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "submit": "Se connecter",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "createAccount": "Créez-en un"
+  },
+  "Settings": {
+    "title": "Paramètres",
+    "profile": {
+      "title": "Profil",
+      "fullName": "Nom complet",
+      "email": "Email",
+      "bio": "Bio",
+      "bioPlaceholder": "Parlez-nous de vous...",
+      "save": "Sauvegarder les modifications"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": "Notifications par email",
+      "progress": "Rappels de progression",
+      "newsletter": "Newsletter"
+    },
+    "language": {
+      "title": "Langue",
+      "french": "Français",
+      "english": "English",
+      "arabic": "العربية"
+    },
+    "security": {
+      "title": "Sécurité",
+      "changePassword": "Changer le mot de passe",
+      "enable2FA": "Activer 2FA"
+    }
+  },
+  "navigation": {
+    "title": "DevAcademy",
+    "program": "Programme",
+    "pricing": "Tarifs",
+    "contact": "Contact",
+    "toggleMenu": "Ouvrir le menu",
+    "dashboard": "Tableau de bord",
+    "courses": "Mes cours",
+    "messages": "Messages",
+    "notifications": "Notifications",
+    "settings": "Paramètres",
+    "billing": "Facturation"
+  },
+  "profile": {
+    "currentCourse": "Formation en cours"
+  },
+  "settings": {
+    "lightMode": "Mode clair",
+    "darkMode": "Mode sombre",
+    "switchLanguage": {
+      "en": "Passer à l'arabe",
+      "ar": "Passer au français",
+      "fr": "Passer à l'anglais"
+    }
+  },
+  "home": {
+    "heroTitle": "Devenez Développeur Web",
+    "heroDescription": "Apprenez le développement web à votre rythme avec une formation complète et structurée.",
+    "getStarted": "Commencez à apprendre maintenant",
+    "joinMessage": "Rejoignez une communauté grandissante de développeurs autodidactes",
+    "features": {
+      "realProjects": {
+        "title": "Formation Complète",
+        "description": "Maîtrisez le développement web du niveau débutant à avancé"
+      },
+      "directMentorship": {
+        "title": "Accès à Vie",
+        "description": "Un paiement unique pour un accès illimité à toutes les leçons"
+      },
+      "certification": {
+        "title": "Expérience d'Apprentissage Engageante",
+        "description": "Rapide, clair et efficace"
+      },
+      "careerSupport": {
+        "title": "Apprentissage à Votre Rythme",
+        "description": "Apprenez quand et où vous voulez"
+      }
+    },
+    "stats": {
+      "title": "Rejoignez une Communauté Grandissante",
+      "subtitle": "Une expérience d'apprentissage adaptée à vos besoins",
+      "studentsTrained": "1000+ étudiants inscrits",
+      "successRate": "100% de cours en autonomie",
+      "averageSalary": "Accès à vie sans abonnement",
+      "supportAvailable": "Fort potentiel de revenu",
+      "description": {
+        "studentsTrained": "étudiants ont rejoint",
+        "successRate": "apprenez à votre propre rythme",
+        "averageSalary": "pas de frais récurrents",
+        "supportAvailable": "les développeurs peuvent gagner des salaires attractifs"
+      }
+    }
+  },
+
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Vous avez une question ? N'hésitez pas à nous contacter. Nous vous répondrons dans les plus brefs délais.",
+    "form": {
+      "name": {
+        "label": "Nom",
+        "placeholder": "Votre nom",
+        "error": "Le nom doit contenir au moins 2 caractères."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "votre@email.com",
+        "error": "Veuillez entrer une adresse email valide."
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Votre message...",
+        "error": "Le message doit contenir au moins 10 caractères."
+      },
+      "submit": "Envoyer le message"
+    },
+    "success": "Message envoyé avec succès!",
+    "error": "Erreur lors de l'envoi du message. Veuillez réessayer."
+  },
+  "pricing": {
+    "title": "Plans de Formation",
+    "subtitle": "Choisissez le plan qui correspond à vos objectifs",
+    "popular": "Plus populaire",
+    "cta": "Commencer maintenant",
+    "footer": "Tous les prix sont en euros (EUR) et incluent la TVA.\nVous pouvez annuler votre abonnement à tout moment.",
+    "beginner": {
+      "name": "Débutant",
+      "price": "49€",
+      "duration": "par mois",
+      "description": "Parfait pour commencer votre voyage en développement web",
+      "features": [
+        "HTML & CSS Fondamentaux",
+        "Introduction à JavaScript",
+        "Projets pratiques basiques",
+        "Support communautaire",
+        "Accès aux ressources débutantes"
+      ]
+    },
+    "success": {
+      "title": "Paiement Réussi !",
+      "description": "Merci d'avoir passé à Premium ! Votre compte a été mis à niveau avec succès et vous avez maintenant accès à toutes les fonctionnalités premium.",
+      "button": "Accédez à votre cours"
+    },
+    "cancel": {
+      "title": "Paiement Annulé",
+      "description": "Votre paiement a été annulé. Si vous avez rencontré un problème ou avez des questions, n'hésitez pas à contacter notre équipe de support.",
+      "tryAgain": "Réessayer",
+      "viewFAQ": "Voir la FAQ"
+    },
+    "intermediate": {
+      "name": "Intermédiaire",
+      "price": "89€",
+      "duration": "par mois",
+      "description": "Pour ceux qui veulent approfondir leurs compétences",
+      "features": [
+        "Tout du plan Débutant",
+        "React & Next.js",
+        "Base de données & API",
+        "Mentorat hebdomadaire",
+        "Projets du monde réel",
+        "Certification intermédiaire"
+      ]
+    },
+    "lifetime": {
+      "name": "Plan Permanent",
+      "price": "2000€",
+      "duration": "paiement unique",
+      "description": "Accès complet à vie pour devenir un expert en développement",
+      "features": [
+        "Tout du plan Pro",
+        "Accès à vie",
+        "Mises à jour gratuites",
+        "Soutien à long terme"
+      ]
+    }
+  },
+  "programme": {
+    "module1": {
+      "title": "Introduction au Développement Web",
+      "duration": "1 semaine",
+      "description": "Les bases du développement web et la mise en place de l'environnement",
+      "sections": {
+        "section1": {
+          "title": "Qu'est-ce que le Développement Web ?",
+          "topics": {
+            "topic1": "Introduction",
+            "topic2": "Différents types de développeurs web"
+          }
+        },
+        "section2": {
+          "title": "Configuration des outils nécessaires",
+          "topics": {
+            "topic1": "VS Code",
+            "topic2": "Commandes Bash"
+          }
+        }
+      }
+    }
+  },
+  "auth": {
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter"
+  },
+  "signUp": {
+    "title": "Créer un compte",
+    "firstName": "Prénom",
+    "firstNamePlaceholder": "Entrez votre prénom",
+    "lastName": "Nom de famille",
+    "lastNamePlaceholder": "Entrez votre nom de famille",
+    "email": "Email",
+    "emailPlaceholder": "Entrez votre email",
+    "confirmEmail": "Confirmer l'email",
+    "confirmEmailPlaceholder": "Confirmez votre email",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Créez un mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+    "submit": "S'inscrire",
+    "termsAndConditions": "En vous inscrivant, vous acceptez nos",
+    "termsLink": "Conditions d'utilisation",
+    "and": "et",
+    "privacyPolicy": "Politique de confidentialité",
+    "alreadyRegistered": "Vous avez déjà un compte ?",
+    "signInLink": "Se connecter",
+    "invalidEmail": "L'email n'est pas valide.",
+    "emailMismatch": "Les emails ne correspondent pas.",
+    "passwordRequirements": "Le mot de passe doit comporter au moins 8 caractères, avec une majuscule, une minuscule, et un chiffre.",
+    "passwordMismatch": "Les mots de passe ne correspondent pas.",
+    "firstNameMin": "Le prénom doit comporter au moins 2 caractères.",
+    "firstNameMax": "Le prénom doit comporter moins de 50 caractères.",
+    "lastNameMin": "Le nom de famille doit comporter au moins 2 caractères.",
+    "lastNameMax": "Le nom de famille doit comporter moins de 50 caractères.",
+    "passwordMin": "Le mot de passe doit comporter au moins 8 caractères.",
+    "passwordUppercase": "Le mot de passe doit contenir au moins une majuscule.",
+    "passwordLowercase": "Le mot de passe doit contenir au moins une minuscule.",
+    "passwordNumber": "Le mot de passe doit contenir au moins un chiffre.",
+    "emailsDontMatch": "Les emails ne correspondent pas.",
+    "passwordsDontMatch": "Les mots de passe ne correspondent pas."
+  },
+  "verifyEmail": {
+    "title": "Vérifiez votre adresse e-mail",
+    "description": "Veuillez vérifier votre e-mail ({email}) et cliquer sur le lien de vérification.",
+    "yourEmail": "votre adresse e-mail",
+    "resendButton": "Renvoyer l'email de vérification",
+    "backToSignIn": "Retour à la connexion",
+    "checkSpam": "Si vous ne voyez pas l'e-mail, veuillez vérifier votre dossier spam.",
+    "contactSupport": "Contacter le support"
+  }
+}

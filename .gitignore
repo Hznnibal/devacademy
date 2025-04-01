@@ -38,3 +38,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore les fichiers de test
+*__tests__/
+*.test.ts
+*.spec.ts
+*.test.js
+*.spec.js
+jest.*.js
+

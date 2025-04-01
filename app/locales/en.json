@@ -1,0 +1,423 @@
+{
+  "login": {
+    "title": "Log in",
+    "subtitle": "Welcome back! Please enter your information.",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Log in",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create one"
+  },
+  "navigation": {
+    "title": "DevAcademy",
+    "program": "Program",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "toggleMenu": "Toggle menu",
+    "dashboard": "Dashboard",
+    "courses": "My Courses",
+    "messages": "Messages",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "billing": "Billing"
+  },
+  "profile": {
+    "currentCourse": "Current course"
+  },
+  "settings": {
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "switchLanguage": {
+      "en": "Switch to Arabic",
+      "ar": "Switch to English"
+    }
+  },
+  "signUp": {
+    "title": "Create an Account",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "confirmEmail": "Confirm Email",
+    "confirmEmailPlaceholder": "Confirm your email",
+    "password": "Password",
+    "passwordPlaceholder": "Create a password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "submit": "Sign Up",
+    "termsAndConditions": "By signing up, you agree to our",
+    "termsLink": "Terms of Service",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy",
+    "alreadyRegistered": "Already have an account?",
+    "signInLink": "Sign In",
+    "invalidEmail": "The email address is not valid.",
+    "emailMismatch": "Emails do not match.",
+    "passwordRequirements": "Password must be at least 8 characters long, with at least one uppercase letter, one lowercase letter, and one special character.",
+    "passwordMismatch": "Passwords do not match.",
+    "firstNameMin": "First name must be at least 2 characters long.",
+    "firstNameMax": "First name must be less than 50 characters.",
+    "lastNameMin": "Last name must be at least 2 characters long.",
+    "lastNameMax": "Last name must be less than 50 characters.",
+    "passwordMin": "Password must be at least 8 characters long.",
+    "passwordUppercase": "Password must contain at least one uppercase letter.",
+    "passwordLowercase": "Password must contain at least one lowercase letter.",
+    "passwordNumber": "Password must contain at least one number.",
+    "emailsDontMatch": "Emails don't match.",
+    "passwordsDontMatch": "Passwords don't match."
+  },
+  "paymentCancelled": {
+    "title": "Payment Cancelled",
+    "message": "Your payment was cancelled. If you experienced any issues or have questions, please don't hesitate to contact our support team.",
+    "tryAgain": "Try Again",
+    "viewFAQ": "View FAQ"
+  },
+  "paymentSuccessful": {
+    "title": "Payment Successful!",
+    "message": "Thank you for upgrading to Premium! Your account has been successfully upgraded and you now have access to all premium features.",
+    "goToCourse": "Go to your course"
+  },
+  "home": {
+    "heroTitle": "Become a Web Developer",
+    "heroDescription": "Learn web development at your own pace with a structured, complete training program.",
+    "getStarted": "Start Learning Now",
+    "joinMessage": "Join a growing community of self-taught developers",
+    "features": {
+      "realProjects": {
+        "title": "Comprehensive Training",
+        "description": "Master web development from beginner to advanced level"
+      },
+      "directMentorship": {
+        "title": "Lifetime Access",
+        "description": "One-time payment for unlimited access to all lessons"
+      },
+      "certification": {
+        "title": "Engaging Learning Experience",
+        "description": "Fast, clear, and effective learning"
+      },
+      "careerSupport": {
+        "title": "Self-Paced Learning",
+        "description": "Learn whenever and wherever you want"
+      }
+    },
+    "stats": {
+      "title": "Join a Growing Community",
+      "subtitle": "A learning experience tailored to your needs",
+      "studentsTrained": "1000+ students enrolled",
+      "successRate": "100% self-paced courses",
+      "averageSalary": "Lifetime access with no subscription",
+      "supportAvailable": "High earning potential",
+      "description": {
+        "studentsTrained": "students have joined",
+        "successRate": "learn at your own pace",
+        "averageSalary": "no recurring fees",
+        "supportAvailable": "developers can earn competitive salaries"
+      }
+    }
+  },
+
+  "pricing": {
+    "title": "Training Plans",
+    "subtitle": "Choose the plan that matches your goals",
+    "popular": "Most Popular",
+    "cta": "Get Started Now",
+    "footer": "All prices are in euros (EUR) and include VAT.\nYou can cancel your subscription at any time.",
+    "beginner": {
+      "name": "Beginner",
+      "price": "€99",
+      "duration": "one-time payment",
+      "description": "Perfect for starting your journey in web development",
+      "features": [
+        "Introduction to the web",
+        "Fundamentals of HTML & CSS",
+        "Basic JavaScript and Git",
+        "Basic practical projects",
+        "Community support",
+        "Access to beginner resources"
+      ]
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "price": "€249",
+      "duration": "one-time payment",
+      "description": "For those who want to deepen their skills",
+      "features": [
+        "Everything from the Beginner plan",
+        "Databases & SQL",
+        "PHP and server-side programming",
+        "Real-world projects",
+        "Intermediate certification"
+      ]
+    },
+    "advanced": {
+      "name": "Advanced",
+      "price": "€399",
+      "duration": "one-time payment",
+      "description": "Full lifetime access to become an expert in web development",
+      "features": [
+        "Everything from the Intermediate plan",
+        "Lifetime access",
+        "Free updates",
+        "Long-term support",
+        "Symfony MVC framework",
+        "Deployment with Docker & Publishing"
+      ]
+    },
+    "success": {
+      "title": "Payment Successful!",
+      "description": "Thank you for upgrading to Premium! Your account has been successfully upgraded and you now have access to all premium features.",
+      "button": "Go to your course"
+    },
+    "cancel": {
+      "title": "Payment Cancelled",
+      "description": "Your payment was cancelled. If you experienced any issues or have questions, please don't hesitate to contact our support team.",
+      "tryAgain": "Try Again",
+      "viewFAQ": "View FAQ"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question? Don't hesitate to contact us. We'll get back to you as soon as possible.",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name",
+        "error": "Name must be at least 2 characters."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com",
+        "error": "Please enter a valid email address."
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Your message...",
+        "error": "Message must be at least 10 characters."
+      },
+      "submit": "Send Message"
+    },
+    "success": "Message sent successfully!",
+    "error": "Error sending message. Please try again."
+  },
+
+  "programme": {
+    "module1": {
+      "title": "Introduction to Web Development",
+      "duration": "1 week",
+      "description": "The basics of web development and setting up the environment",
+      "sections": {
+        "section1": {
+          "title": "What is Web Development?",
+          "topics": ["Introduction", "Different Types of Web Developers"]
+        },
+        "section2": {
+          "title": "Setting Up Necessary Tools",
+          "topics": ["VS Code", "Bash commands"]
+        }
+      }
+    },
+    "module2": {
+      "title": "Building an Interface",
+      "duration": "8 weeks",
+      "description": "Master HTML, CSS, and JavaScript to create interactive web interfaces",
+      "sections": {
+        "section1": {
+          "title": "HTML",
+          "topics": [
+            "Basic Structure of an HTML Page",
+            "Tags and Sectioning",
+            "Styling",
+            "Links",
+            "Lists",
+            "Media",
+            "Tables",
+            "Forms"
+          ]
+        },
+        "section2": {
+          "title": "CSS",
+          "topics": [
+            "Introduction to CSS",
+            "Selectors",
+            "Colors and Fonts",
+            "Box Models",
+            "Positioning",
+            "Responsive Design",
+            "Exercises"
+          ]
+        },
+        "section3": {
+          "title": "JavaScript",
+          "topics": [
+            "Basics of the Language",
+            "Variables",
+            "Displaying Text",
+            "Operators",
+            "Conditions",
+            "Loops",
+            "Functions",
+            "Arrays",
+            "D.O.M",
+            "Native Objects",
+            "JavaScript on the Web",
+            "Events",
+            "Regular Expressions",
+            "Forms"
+          ]
+        },
+        "section4": {
+          "title": "GIT & GitHub",
+          "topics": ["What is GIT?", "Commit", "Logs", "GitHub", ".gitignore"]
+        }
+      }
+    },
+    "module3": {
+      "title": "Databases & SQL",
+      "duration": "3 weeks",
+      "description": "Learn to manage and manipulate data with SQL databases",
+      "sections": {
+        "section1": {
+          "title": "Database",
+          "topics": [
+            "Introduction",
+            "Database Fundamentals",
+            "Installation",
+            "Create a Database",
+            "Save a Database"
+          ]
+        },
+        "section2": {
+          "title": "SQL",
+          "topics": [
+            "Introduction",
+            "Formalize SQL Queries",
+            "SQL Joins",
+            "Data Update"
+          ]
+        }
+      }
+    },
+    "module4": {
+      "title": "Use a Server Language",
+      "duration": "6 weeks",
+      "description": "Master PHP and object-oriented programming for backend development",
+      "sections": {
+        "section1": {
+          "title": "PHP",
+          "topics": [
+            "Introduction",
+            "Installation",
+            "Basics",
+            "Conditional Statements",
+            "Loops",
+            "Array",
+            "Functions",
+            "Date and hours",
+            "Files manipulate",
+            "Servers & Forms",
+            "Upload files",
+            "Sessions",
+            "Authentication",
+            "Mails",
+            "Unit tests"
+          ]
+        },
+        "section2": {
+          "title": "Database Connection with PDO",
+          "topics": ["Introduction to PDO", "Understand PDO", "CRUD"]
+        },
+        "section3": {
+          "title": "Object-Oriented Programming (OOP)",
+          "topics": ["Introduction", "Preamble"]
+        }
+      }
+    },
+    "module5": {
+      "title": "Use a MVC Framework",
+      "duration": "4 weeks",
+      "description": "Develop robust web applications with Symfony and create APIs",
+      "sections": {
+        "section1": {
+          "title": "Symfony",
+          "topics": [
+            "Introduction",
+            "Create a Symfony project",
+            "Forms",
+            "DQL",
+            "Send mail",
+            "Services",
+            "Doctrine events",
+            "Authentication",
+            "Unit tests with Symfony"
+          ]
+        },
+        "section2": {
+          "title": "API",
+          "topics": [
+            "Introduction",
+            "Implementing with Symfony and API Platform",
+            "Testing/Consuming an API"
+          ]
+        }
+      }
+    },
+    "module6": {
+      "title": "Deployment",
+      "duration": "2 weeks",
+      "description": "Deploy your applications to production using Docker",
+      "sections": {
+        "section1": {
+          "title": "Docker",
+          "topics": ["Introduction", "Symfony Containerization"]
+        },
+        "section2": {
+          "title": "Publish your app",
+          "topics": ["Introduction", "Publish your app"]
+        }
+      }
+    }
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signOut": "Sign out"
+  },
+  "Settings": {
+    "title": "Settings",
+    "profile": {
+      "title": "Profile",
+      "fullName": "Full Name",
+      "email": "Email",
+      "bio": "Bio",
+      "bioPlaceholder": "Tell us about yourself...",
+      "save": "Save Changes"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": "Email Notifications",
+      "progress": "Progress Reminders",
+      "newsletter": "Newsletter"
+    },
+    "language": {
+      "title": "Language",
+      "french": "French",
+      "english": "English",
+      "arabic": "Arabic"
+    },
+    "security": {
+      "title": "Security",
+      "changePassword": "Change Password",
+      "enable2FA": "Enable 2FA"
+    }
+  },
+  "verifyEmail": {
+    "title": "Verify Your Email Address",
+    "description": "Please check your email ({email}) and click the verification link.",
+    "yourEmail": "your email address",
+    "resendButton": "Resend Verification Email",
+    "backToSignIn": "Back to Sign In",
+    "checkSpam": "If you don't see the email, please check your spam folder.",
+    "contactSupport": "Contact Support"
+  }
+}
