@@ -44,8 +44,12 @@ export async function middleware(req: NextRequest) {
   const token = await getToken({ req, secret: process.env.AUTH_SECRET });
   const { pathname } = req.nextUrl;
   const pathSegments = pathname.split("/");
-
+  const url = req.nextUrl;
   const lang = pathSegments[2];
+
+  if (url.pathname === "/") {
+    return NextResponse.redirect(new URL("/en", req.url));
+  }
 
   if (!isValidLanguage(lang)) {
     const newUrl = new URL(pathname.replace(`/${lang}`, "/en"), req.url);
@@ -70,5 +74,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/courses/:path*"],
+  matcher: ["/", "/courses/:path*"],
 };
