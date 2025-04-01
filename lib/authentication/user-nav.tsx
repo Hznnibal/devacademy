@@ -5,8 +5,8 @@ import {
     DropdownMenuGroup, DropdownMenuLabel,
     DropdownMenuSeparator
 } from "@/components/ui/dropdown-menu";
-import { useTranslations } from 'next-intl';
-import { usePathname } from "next/navigation";
+// import { useTranslations } from 'next-intl';
+// import { usePathname } from "next/navigation";
 interface UserNavProps {
     user: {
         name?: string | null;
@@ -16,10 +16,10 @@ interface UserNavProps {
 }
 
 export function UserNav({ user }: UserNavProps) {
-    const t = useTranslations();
-    const pathname = usePathname();
+    // const t = useTranslations();
+    // const pathname = usePathname();
 
-    const lang = pathname.includes('/ar') ? 'ar' : pathname.includes('/en') ? 'en' : 'fr';
+    // const lang = pathname.includes('/ar') ? 'ar' : pathname.includes('/en') ? 'en' : 'fr';
 
     return (
         <>
