@@ -2,16 +2,10 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
-    DropdownMenuGroup,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
+    DropdownMenuGroup, DropdownMenuLabel,
+    DropdownMenuSeparator
 } from "@/components/ui/dropdown-menu";
-import {
-    Settings
-} from "lucide-react";
 import { useTranslations } from 'next-intl';
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 interface UserNavProps {
     user: {
@@ -102,12 +96,12 @@ export function UserNav({ user }: UserNavProps) {
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-                <DropdownMenuItem asChild>
+                {/* <DropdownMenuItem asChild>
                     <Link href={`/${lang}/settings`} className="flex w-full cursor-pointer items-center">
                         <Settings className="mr-2 h-4 w-4" />
                         {t('navigation.settings')}
                     </Link>
-                </DropdownMenuItem>
+                </DropdownMenuItem> */}
                 {/* <DropdownMenuItem asChild>
                     <Link href={`/${lang}/billing`} className="flex w-full cursor-pointer items-center">
                         <CreditCard className="mr-2 h-4 w-4" />

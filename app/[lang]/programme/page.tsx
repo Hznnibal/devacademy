@@ -202,7 +202,7 @@ export default function Programme() {
                 <div className="flex items-center gap-2">
                     <GraduationCap className="h-6 w-6" />
                     <Link href={`/${lang}`} className="text-xl font-bold">
-                        DevAcademy
+                        Barmajah Academy
                     </Link>
                 </div>
                 <Tabs defaultValue="module-1" className="w-full">
