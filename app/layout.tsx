@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
     title: 'Barmajah Academy',
     description: 'Complete Training to Become a Professional Web Developer',
+    icons: {
+        icon: "/barmajahicon.png", // Favicon principale
+    },
 };
 
 export default async function RootLayout({
