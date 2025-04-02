@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_DISABLE_LOGS:
+      process.env.NODE_ENV === "production" ? "true" : "false",
+  },
   output: "standalone",
 
   images: {
