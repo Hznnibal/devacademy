@@ -19,7 +19,7 @@ const PLAN_MAPPING: Record<string, UserPlan> = {
   price_1R9QOxKaMuKwxZvFPtkSEuZd: "BASIC",
   price_1R9QOtKaMuKwxZvFny7LpDGU: "INTERMEDIATE",
   price_1R9QOmKaMuKwxZvFWZfU4dFR: "ADVANCED",
-  price_1R9QhCKaMuKwxZvF8P8cyvSA: "ADVANCED",
+  price_1R9T8KKaMuKwxZvFpcMc7PK4: "ADVANCED",
 };
 
 const PLAN_HIERARCHY: Record<UserPlan, number> = {
