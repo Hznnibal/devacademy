@@ -8,9 +8,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const pricingPlans = [
-    { key: "pricing.beginner", priceId: "price_1R6YppKaMuKwxZvFi4scfXLI" },
-    { key: "pricing.intermediate", priceId: "price_1R6YsZKaMuKwxZvFLYXkFy9L", popular: true },
-    { key: "pricing.advanced", priceId: "price_1R6YuXKaMuKwxZvFP3OpqIkF" }
+    { key: "pricing.beginner", priceId: "price_1R9QOxKaMuKwxZvFPtkSEuZd" },
+    { key: "pricing.intermediate", priceId: "price_1R9QOtKaMuKwxZvFny7LpDGU", popular: true },
+    { key: "pricing.advanced", priceId: "price_1R9QOmKaMuKwxZvFWZfU4dFR" },
+    { key: "pricing.advanced", priceId: "price_1R9QhCKaMuKwxZvF8P8cyvSA" }
 ];
 
 export default function Page() {

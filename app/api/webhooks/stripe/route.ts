@@ -16,9 +16,10 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 
 const PLAN_MAPPING: Record<string, UserPlan> = {
   price_free: "FREE",
-  price_1R6YppKaMuKwxZvFi4scfXLI: "BASIC",
-  price_1R6YsZKaMuKwxZvFLYXkFy9L: "INTERMEDIATE",
-  price_1R6YuXKaMuKwxZvFP3OpqIkF: "ADVANCED",
+  price_1R9QOxKaMuKwxZvFPtkSEuZd: "BASIC",
+  price_1R9QOtKaMuKwxZvFny7LpDGU: "INTERMEDIATE",
+  price_1R9QOmKaMuKwxZvFWZfU4dFR: "ADVANCED",
+  price_1R9QhCKaMuKwxZvF8P8cyvSA: "ADVANCED",
 };
 
 const PLAN_HIERARCHY: Record<UserPlan, number> = {
