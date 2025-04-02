@@ -7,8 +7,8 @@ import './stylemain.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'Dev Academy',
-    description: 'Formation complète pour devenir développeur web professionnel',
+    title: 'Barmajah Academy',
+    description: 'Complete Training to Become a Professional Web Developer',
 };
 
 export default async function RootLayout({
