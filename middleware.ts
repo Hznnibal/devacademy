@@ -42,6 +42,8 @@ function hasAccessToCourse(path: string, userPlan: SubscriptionPlan): boolean {
 
 export async function middleware(req: NextRequest) {
   const token = await getToken({ req, secret: process.env.AUTH_SECRET });
+
+  console.log("TOKEN: ", token);
   const { pathname } = req.nextUrl;
   const pathSegments = pathname.split("/");
   const url = req.nextUrl;
@@ -57,12 +59,14 @@ export async function middleware(req: NextRequest) {
   }
 
   if (!token) {
+    console.log("Redirection vers sign-in car token absent");
     const signInUrl = new URL(`/${lang}/sign-in`, req.url);
     signInUrl.searchParams.set("callbackUrl", req.url);
     return NextResponse.redirect(signInUrl);
   }
 
   if (!token.plan || !isValidPlan(token.plan as string)) {
+    console.log("Plan introuvable dans le token : ", token);
     return NextResponse.redirect(new URL(`/${lang}/pricing`, req.url));
   }
 
