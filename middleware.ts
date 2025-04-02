@@ -1,4 +1,5 @@
 import { getToken } from "next-auth/jwt";
+import { useSession } from "next-auth/react";
 import { NextRequest, NextResponse } from "next/server";
 
 const SUPPORTED_LANGUAGES = ["en", "fr", "ar"] as const;
@@ -11,6 +12,10 @@ type CourseAccess = {
   [key: string]: readonly SubscriptionPlan[];
 };
 
+export default function Debug() {
+  const { data: session } = useSession();
+  console.log("Session:", session);
+}
 const COURSE_ACCESS: CourseAccess = {
   "/courses/*/intro": ["BASIC", "INTERMEDIATE", "ADVANCED"] as const,
   "/courses/*/basics": ["BASIC", "INTERMEDIATE", "ADVANCED"] as const,

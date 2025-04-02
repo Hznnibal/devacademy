@@ -11,7 +11,6 @@ const pricingPlans = [
     { key: "pricing.beginner", priceId: "price_1R9QOxKaMuKwxZvFPtkSEuZd" },
     { key: "pricing.intermediate", priceId: "price_1R9QOtKaMuKwxZvFny7LpDGU", popular: true },
     { key: "pricing.advanced", priceId: "price_1R9QOmKaMuKwxZvFWZfU4dFR" },
-    { key: "pricing.advanced", priceId: "price_1R9T8KKaMuKwxZvFpcMc7PK4" }
 ];
 
 export default function Page() {
