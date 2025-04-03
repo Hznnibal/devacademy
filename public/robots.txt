@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /[lang]/sign-in
+Disallow: /[lang]/sign-up
+Disallow: /[lang]/verifymail
+Sitemap: https://www.barmajah-academy.com/api/sitemap
