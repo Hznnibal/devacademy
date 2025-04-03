@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 
 const baseUrl = "https://barmajah-academy.com";
 
-// Fonction pour extraire toutes les URLs des formations
 const getCourseUrls = (navItems: typeof arabicNav) => {
   const urls: string[] = [];
 
@@ -29,14 +28,13 @@ const getCourseUrls = (navItems: typeof arabicNav) => {
 export async function GET() {
   const urls: string[] = [];
 
-  // Pages principales (statiques)
   const staticPages = [
     "",
     "pricing",
     "contact",
     "programme",
-    "sign-in",
-    "sign-up",
+    // "sign-in",
+    // "sign-up",
   ];
   ["ar", "en"].forEach((lang) => {
     staticPages.forEach((page) => {
