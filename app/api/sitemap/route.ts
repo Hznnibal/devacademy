@@ -2,7 +2,7 @@ import { navigationItems as arabicNav } from "@/components/sidenav/SideNavAr/nav
 import { navigationItems as englishNav } from "@/components/sidenav/SideNavEn/nav-links";
 import { NextResponse } from "next/server";
 
-const baseUrl = "https://barmajah-academy.com/en";
+const baseUrl = "https://barmajah-academy.com";
 
 // Fonction pour extraire toutes les URLs des formations
 const getCourseUrls = (navItems: typeof arabicNav) => {
