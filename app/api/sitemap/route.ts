@@ -1,12 +1,12 @@
-import { navigationItems as arabicNav } from "@/components/sidenav/SideNavAr/nav-links"; // Import des formations en arabe
-import { navigationItems as englishNav } from "@/components/sidenav/SideNavEn/nav-links"; // Import des formations en anglais
+import { navigationItems as arabicNav } from "@/components/sidenav/SideNavAr/nav-links";
+import { navigationItems as englishNav } from "@/components/sidenav/SideNavEn/nav-links";
 import { NextResponse } from "next/server";
 
 const baseUrl = "https://barmajahacademy.com";
 
 // Fonction pour extraire toutes les URLs des formations
 const getCourseUrls = (navItems: typeof arabicNav) => {
-  let urls: string[] = [];
+  const urls: string[] = [];
 
   navItems.forEach((course) => {
     course.submenu?.forEach((sub) => {
@@ -27,7 +27,7 @@ const getCourseUrls = (navItems: typeof arabicNav) => {
 };
 
 export async function GET() {
-  let urls: string[] = [];
+  const urls: string[] = [];
 
   // Pages principales (statiques)
   const staticPages = [
@@ -52,12 +52,15 @@ export async function GET() {
   });
 
   // Ajouter les URLs des formations en arabe et en anglais
-  urls = urls.concat(getCourseUrls(arabicNav));
-  urls = urls.concat(getCourseUrls(englishNav));
+  const allUrls = [
+    ...urls,
+    ...getCourseUrls(arabicNav),
+    ...getCourseUrls(englishNav),
+  ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${urls.join("")}
+    ${allUrls.join("")}
   </urlset>`;
 
   return new NextResponse(sitemap, {
