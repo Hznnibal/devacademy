@@ -251,6 +251,14 @@
     "resendButton": "Renvoyer l'email de vérification",
     "backToSignIn": "Retour à la connexion",
     "checkSpam": "Si vous ne voyez pas l'e-mail, veuillez vérifier votre dossier spam.",
-    "contactSupport": "Contacter le support"
+    "contactSupport": "Contacter le support",
+    "successTitle": "Email vérifié",
+    "successDescription": "Votre adresse e-mail a été vérifiée avec succès. Vous pouvez maintenant vous connecter à votre compte.",
+    "goToSignIn": "Aller à la connexion"
+  },
+  "confirmation": {
+    "title": "Votre message a bien été envoyé",
+    "subtitle": "Nous vous remercions pour votre message. Nous vous répondrons dans les plus brefs délais.",
+    "button": "Retour à l'accueil"
   }
 }

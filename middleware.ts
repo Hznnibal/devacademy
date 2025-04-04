@@ -49,7 +49,7 @@ export async function middleware(req: NextRequest) {
   const token = await getToken({
     req,
     secret: process.env.AUTH_SECRET,
-    secureCookie: true,
+    secureCookie: process.env.NODE_ENV === "production",
   });
 
   console.log("TOKEN: ", token);
@@ -72,6 +72,13 @@ export async function middleware(req: NextRequest) {
     const signInUrl = new URL(`/${lang}/sign-in`, req.url);
     signInUrl.searchParams.set("callbackUrl", req.url);
     return NextResponse.redirect(signInUrl);
+  }
+
+  if (!token.emailVerified) {
+    console.log("Redirection vers page de vérification de l'email");
+    const verifyEmailUrl = new URL(`/${lang}/verifymail`, req.url);
+    verifyEmailUrl.searchParams.set("email", token.email as string);
+    return NextResponse.redirect(verifyEmailUrl);
   }
 
   if (!token.plan || !isValidPlan(token.plan as string)) {

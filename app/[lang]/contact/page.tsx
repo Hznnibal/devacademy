@@ -15,6 +15,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Mail, Send } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { useTranslations } from 'next-intl';
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -23,6 +24,9 @@ import * as z from "zod";
 export default function ContactPage() {
     const t = useTranslations('contact');
     const { data: session } = useSession();
+    const pathname = usePathname();
+    const lang = pathname.split("/")[1];
+    const router = useRouter();
 
     const formSchema = z.object({
         name: z.string().min(2, {
@@ -71,6 +75,7 @@ export default function ContactPage() {
             if (session?.user?.email) {
                 form.setValue('email', session.user.email);
             }
+            router.push(`/${lang}/confirmationmail`)
         } catch (error: unknown) {
             console.error(error);
             toast.error(t('error'));

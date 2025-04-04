@@ -72,6 +72,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             isActive: true,
             image: true,
             name: true,
+            emailVerified: true,
           },
         });
 
@@ -80,6 +81,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           token.isActive = userFromDb.isActive;
           token.image = userFromDb.image || null;
           token.name = userFromDb.name || "Utilisateur";
+          token.emailVerified = userFromDb.emailVerified;
         }
       }
 
@@ -98,6 +100,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             isActive: true,
             image: true,
             name: true,
+            emailVerified: true,
           },
         });
 
@@ -107,6 +110,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           session.user.isActive = userFromDb.isActive;
           session.user.image = userFromDb.image || undefined;
           session.user.name = userFromDb.name || "Utilisateur";
+          session.user.emailVerified = userFromDb.emailVerified;
         }
       }
       return session;
