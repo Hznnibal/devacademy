@@ -22,7 +22,8 @@
     "billing": "الفوترة"
   },
   "profile": {
-    "currentCourse": "التدريب الحالي"
+    "currentCourse": "التدريب الحالي",
+    "underdevelopment": "تحت التطوير"
   },
   "settings": {
     "lightMode": "الوضع الفاتح",

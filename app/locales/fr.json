@@ -50,7 +50,8 @@
     "billing": "Facturation"
   },
   "profile": {
-    "currentCourse": "Formation en cours"
+    "currentCourse": "Formation en cours",
+    "underdevelopment": "En développement"
   },
   "settings": {
     "lightMode": "Mode clair",

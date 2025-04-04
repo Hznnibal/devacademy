@@ -22,7 +22,8 @@
     "billing": "Billing"
   },
   "profile": {
-    "currentCourse": "Current course"
+    "currentCourse": "Current course",
+    "underdevelopment": "Under development"
   },
   "settings": {
     "lightMode": "Light mode",

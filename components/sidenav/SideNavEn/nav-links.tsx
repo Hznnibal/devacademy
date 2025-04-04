@@ -32,7 +32,7 @@ export const navigationItems: NavItem[] = [
     icon: <Layout className="h-5 w-5" />,
     progress: 0,
     isMainMenu: true,
-    requiredPlan: ["BASIC", "INTERMEDIATE", "ADVANCED"], // Ajout de la propriété requiredPlan
+    requiredPlan: ["BASIC", "INTERMEDIATE", "ADVANCED"],
     submenu: [
       {
         title: "HTML",
@@ -237,7 +237,7 @@ export const navigationItems: NavItem[] = [
   //   icon: <Code2 className="h-5 w-5" />,
   //   progress: 0,
   //   submenu: [
-  //     // { title: "Download Node.js", href: "/courses/en/basics/install/php" },
+  //     { title: "Download Node.js", href: "/courses/en/basics/install/php" },
   //     { title: "Why React?", href: "/courses/en/react/why-react" },
   //     { title: "React Fundamentals", href: "/courses/en/react/basics" },
   //     { title: "Hooks & State", href: "/courses/en/react/hooks" },
