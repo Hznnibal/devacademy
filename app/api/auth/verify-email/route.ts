@@ -45,5 +45,8 @@ export async function GET(req: Request) {
     },
   });
 
-  return NextResponse.redirect("http://localhost:3000/en/verifysuccess");
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!;
+  const verifyUrl = `${baseUrl}/en/verifysuccess`;
+
+  return NextResponse.redirect(verifyUrl);
 }
