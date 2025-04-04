@@ -2,10 +2,8 @@
 
 import { BuyButton } from "@/components/buy/BuyButton";
 import { Card } from "@/components/ui/card";
-import { Check, GraduationCap } from "lucide-react";
+import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 const pricingPlans = [
     { key: "pricing.beginner", priceId: "price_1R9QOxKaMuKwxZvFPtkSEuZd" },
@@ -15,19 +13,10 @@ const pricingPlans = [
 
 export default function Page() {
     const t = useTranslations();
-    const pathname = usePathname();
-    const lang = pathname.includes('/ar') ? 'ar' : pathname.includes('/en') ? 'en' : 'fr';
-
 
     return (
-        <div className="min-h-screen bg-background py-20">
+        <div className="min-h-screen bg-background py-28">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center gap-2">
-                    <GraduationCap className="h-6 w-6" />
-                    <Link href={`/${lang}`} className="text-xl font-bold">
-                        Barmajah Academy
-                    </Link>
-                </div>
                 <div className="text-center">
                     <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                         {t("pricing.title")}

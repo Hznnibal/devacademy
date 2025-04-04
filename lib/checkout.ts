@@ -4,17 +4,22 @@ import { auth } from "@/lib/authentication/auth";
 import { prisma } from "@/lib/prisma";
 import { stripe } from "@/lib/stripe";
 import { headers } from "next/headers";
-import { redirect } from "next/navigation";
+
+const PRICE_IDS = {
+  BASIC: "price_1R9QOxKaMuKwxZvFPtkSEuZd",
+  INTERMEDIATE: "price_1R9QOtKaMuKwxZvFny7LpDGU",
+  ADVANCED: "price_1R9QOmKaMuKwxZvFWZfU4dFR",
+};
 
 export async function createCheckoutSession(priceId: string, lang: string) {
   if (!lang) {
-    throw new Error("Lang parameter is missing");
+    return { error: "Lang parameter is missing" };
   }
 
   const session = await auth();
 
   if (!session?.user) {
-    throw new Error("User not authenticated");
+    return { redirect: `/${lang}/sign-in` };
   }
 
   const user = await prisma.user.findUnique({
@@ -23,8 +28,40 @@ export async function createCheckoutSession(priceId: string, lang: string) {
     },
     select: {
       stripeCustomerId: true,
+      emailVerified: true,
+      plan: true,
     },
   });
+
+  if (!user?.emailVerified) {
+    return {
+      redirect: `/${lang}/verifymail?email=${encodeURIComponent(
+        session.user.email!
+      )}`,
+    };
+  }
+
+  const userPlan = user?.plan;
+
+  if (userPlan === "ADVANCED") {
+    return { error: "You already have the highest plan." };
+  }
+
+  if (userPlan === "INTERMEDIATE") {
+    if (priceId !== PRICE_IDS.ADVANCED) {
+      return {
+        error: "You can only upgrade to the ADVANCED plan.",
+      };
+    }
+  }
+
+  if (userPlan === "BASIC") {
+    if (![PRICE_IDS.INTERMEDIATE, PRICE_IDS.ADVANCED].includes(priceId)) {
+      return {
+        error: "You can only upgrade to the INTERMEDIATE or ADVANCED plan.",
+      };
+    }
+  }
 
   const headersList = await headers();
   const host = headersList.get("host");
@@ -47,8 +84,8 @@ export async function createCheckoutSession(priceId: string, lang: string) {
   });
 
   if (!checkoutSession.url) {
-    throw new Error("Failed to create checkout session");
+    return { error: "Échec de la création de la session de paiement." };
   }
 
-  redirect(checkoutSession.url);
+  return { url: checkoutSession.url };
 }

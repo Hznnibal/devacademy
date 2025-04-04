@@ -12,8 +12,10 @@ const signUp = async (formData: FormData) => {
       const password = formData.get("password");
       const firstName = formData.get("firstName");
       const lastName = formData.get("lastName");
+
       const validatedData = schema.parse({ email, password });
       const emailLower = validatedData.email.toLowerCase();
+
       const stripeCustomer = await stripe.customers.create({
         email: emailLower,
         name: `${firstName} ${lastName}`.trim(),
@@ -39,9 +41,12 @@ const signUp = async (formData: FormData) => {
       });
 
       const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!;
-      const verifyUrl = `${baseUrl}/api/auth/verify-email?token=${token}&identifier=${email}`;
+      const verifyUrl = `${baseUrl}/api/auth/verify-email?token=${token}&identifier=${emailLower}`;
 
       await sendVerificationEmail(emailLower, verifyUrl);
+
+      // 👇 Retourne l'email ici
+      return { email: emailLower };
     },
 
     successMessage: "Account created. Please check your email to verify.",

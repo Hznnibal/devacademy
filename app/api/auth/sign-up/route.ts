@@ -1,4 +1,3 @@
-// app/api/auth/sign-up/route.ts
 import { signUp } from "@/lib/authentication/actions";
 
 export async function POST(request: Request) {

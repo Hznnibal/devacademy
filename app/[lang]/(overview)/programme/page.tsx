@@ -2,15 +2,11 @@
 
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, CheckCircle2, GraduationCap } from "lucide-react";
+import { BookOpen, CheckCircle2 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export default function Programme() {
     const t = useTranslations();
-    const pathname = usePathname();
-    const lang = pathname.includes('/ar') ? 'ar' : pathname.includes('/en') ? 'en' : 'fr';
 
     const modules = [
         {
@@ -197,14 +193,8 @@ export default function Programme() {
 
 
     return (
-        <div className="min-h-screen bg-background p-6 lg:p-8 mt-24">
+        <div className="min-h-screen bg-background py-28">
             <div className="max-w-7xl mx-auto">
-                <div className="flex items-center gap-2">
-                    <GraduationCap className="h-6 w-6" />
-                    <Link href={`/${lang}`} className="text-xl font-bold">
-                        Barmajah Academy
-                    </Link>
-                </div>
                 <Tabs defaultValue="module-1" className="w-full">
                     <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
                         {modules.map((module) => (
