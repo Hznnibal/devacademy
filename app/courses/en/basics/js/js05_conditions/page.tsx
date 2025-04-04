@@ -403,11 +403,11 @@ if (answer == "yes") {
                 <CodeBlock code={`(condition) ? instruction1 : instruction2`} />
                 <p className="text-lg leading-relaxed mb-4">
                     How it works:
-                    <ul>
-                        <li>If the condition inside the parentheses is true, <code>instruction1</code> is executed.</li>
-                        <li>If the condition is false, <code>instruction2</code> is executed.</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li>If the condition inside the parentheses is true, <code>instruction1</code> is executed.</li>
+                    <li>If the condition is false, <code>instruction2</code> is executed.</li>
+                </ul>
                 <p className="text-lg leading-relaxed mb-4">
                     Example:
                 </p>

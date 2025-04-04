@@ -67,163 +67,164 @@ const Page = () => {
 
     return (
         <div className="min-h-screen bg-background flex items-center justify-center p-4">
-            <div className="w-full max-w-sm mx-auto space-y-6">
+            <div className="w-1/4 mx-auto space-y-6">
                 <h1 className="text-2xl font-bold text-center mb-6">{t("signUp.title")}</h1>
+                <div className=" bg-card p-8 space-y-6 rounded-lg shadow-lg">
+                    <Form {...form}>
+                        <form
+                            className="space-y-4"
+                            onSubmit={form.handleSubmit(onSubmit)}
+                        >
+                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                <FormField
+                                    control={form.control}
+                                    name="firstName"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>{t("signUp.firstName")}</FormLabel>
+                                            <FormControl>
+                                                <Input
+                                                    {...field}
+                                                    placeholder={t("signUp.firstNamePlaceholder")}
+                                                    autoComplete="given-name"
+                                                />
+                                            </FormControl>
+                                            <FormMessage className="text-red-700" />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={form.control}
+                                    name="lastName"
+                                    render={({ field }) => (
+                                        <FormItem >
+                                            <FormLabel>{t("signUp.lastName")}</FormLabel>
+                                            <FormControl>
+                                                <Input
+                                                    {...field}
+                                                    placeholder={t("signUp.lastNamePlaceholder")}
+                                                    autoComplete="family-name"
+                                                />
+                                            </FormControl>
+                                            <FormMessage className="text-red-700" />
+                                        </FormItem>
+                                    )}
+                                />
+                            </div>
+                            <div className="space-y-4">
+                                <FormField
+                                    control={form.control}
+                                    name="email"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>{t("signUp.email")}</FormLabel>
+                                            <FormControl>
+                                                <Input
+                                                    {...field}
+                                                    type="email"
+                                                    placeholder={t("signUp.emailPlaceholder")}
+                                                    autoComplete="email"
+                                                />
+                                            </FormControl>
+                                            <FormMessage className="text-red-700" />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={form.control}
+                                    name="confirmEmail"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>{t("signUp.confirmEmail")}</FormLabel>
+                                            <FormControl>
+                                                <Input
+                                                    {...field}
+                                                    type="email"
+                                                    placeholder={t("signUp.confirmEmailPlaceholder")}
+                                                    autoComplete="email"
+                                                />
+                                            </FormControl>
+                                            <FormMessage className="text-red-700" />
+                                        </FormItem>
+                                    )}
+                                />
+                            </div>
+                            <div className="space-y-4">
+                                <FormField
+                                    control={form.control}
+                                    name="password"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>{t("signUp.password")}</FormLabel>
+                                            <FormControl>
+                                                <Input
+                                                    {...field}
+                                                    type="password"
+                                                    placeholder={t("signUp.passwordPlaceholder")}
+                                                    autoComplete="new-password"
+                                                />
+                                            </FormControl>
+                                            <FormMessage className="text-red-700" />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={form.control}
+                                    name="confirmPassword"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>{t("signUp.confirmPassword")}</FormLabel>
+                                            <FormControl>
+                                                <Input
+                                                    {...field}
+                                                    type="password"
+                                                    placeholder={t("signUp.confirmPasswordPlaceholder")}
+                                                    autoComplete="new-password"
+                                                />
+                                            </FormControl>
+                                            <FormMessage className="text-red-700" />
+                                        </FormItem>
+                                    )}
+                                />
+                            </div>
+                            <Button className="w-full" type="submit" disabled={isLoading}>
+                                {t("signUp.submit")}
+                            </Button>
+                        </form>
+                    </Form>
 
-                <Form {...form}>
-                    <form
-                        className="space-y-4"
-                        onSubmit={form.handleSubmit(onSubmit)}
-                    >
-                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                            <FormField
-                                control={form.control}
-                                name="firstName"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>{t("signUp.firstName")}</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                {...field}
-                                                placeholder={t("signUp.firstNamePlaceholder")}
-                                                autoComplete="given-name"
-                                            />
-                                        </FormControl>
-                                        <FormMessage className="text-red-700" />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="lastName"
-                                render={({ field }) => (
-                                    <FormItem >
-                                        <FormLabel>{t("signUp.lastName")}</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                {...field}
-                                                placeholder={t("signUp.lastNamePlaceholder")}
-                                                autoComplete="family-name"
-                                            />
-                                        </FormControl>
-                                        <FormMessage className="text-red-700" />
-                                    </FormItem>
-                                )}
-                            />
+                    <div className="text-center text-sm">
+                        <p className="text-muted-foreground">
+                            {t("signUp.termsAndConditions")}{" "}
+                            <a href="#" className="text-primary hover:underline">
+                                {t("signUp.termsLink")}
+                            </a>{" "}
+                            {t("signUp.and")}{" "}
+                            <a href="#" className="text-primary hover:underline">
+                                {t("signUp.privacyPolicy")}
+                            </a>
+                            .
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        <div className="absolute inset-0 flex items-center">
+                            <div className="w-full border-t border-border"></div>
                         </div>
-                        <div className="space-y-4">
-                            <FormField
-                                control={form.control}
-                                name="email"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>{t("signUp.email")}</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                {...field}
-                                                type="email"
-                                                placeholder={t("signUp.emailPlaceholder")}
-                                                autoComplete="email"
-                                            />
-                                        </FormControl>
-                                        <FormMessage className="text-red-700" />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="confirmEmail"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>{t("signUp.confirmEmail")}</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                {...field}
-                                                type="email"
-                                                placeholder={t("signUp.confirmEmailPlaceholder")}
-                                                autoComplete="email"
-                                            />
-                                        </FormControl>
-                                        <FormMessage className="text-red-700" />
-                                    </FormItem>
-                                )}
-                            />
+                        <div className="relative flex justify-center text-xs uppercase">
+                            <span className="px-2 text-muted-foreground">
+                                {t("signUp.alreadyRegistered")}
+                            </span>
                         </div>
-                        <div className="space-y-4">
-                            <FormField
-                                control={form.control}
-                                name="password"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>{t("signUp.password")}</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                {...field}
-                                                type="password"
-                                                placeholder={t("signUp.passwordPlaceholder")}
-                                                autoComplete="new-password"
-                                            />
-                                        </FormControl>
-                                        <FormMessage className="text-red-700" />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="confirmPassword"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>{t("signUp.confirmPassword")}</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                {...field}
-                                                type="password"
-                                                placeholder={t("signUp.confirmPasswordPlaceholder")}
-                                                autoComplete="new-password"
-                                            />
-                                        </FormControl>
-                                        <FormMessage className="text-red-700" />
-                                    </FormItem>
-                                )}
-                            />
-                        </div>
-                        <Button className="w-full" type="submit" disabled={isLoading}>
-                            {t("signUp.submit")}
+                    </div>
+
+                    <div className="mt-4">
+                        <Button asChild variant="outline" className="w-full">
+                            <Link href={`/${lang}/sign-in`}>
+                                {t("signUp.signInLink")}
+                            </Link>
                         </Button>
-                    </form>
-                </Form>
-
-                <div className="text-center text-sm">
-                    <p className="text-muted-foreground">
-                        {t("signUp.termsAndConditions")}{" "}
-                        <a href="#" className="text-primary hover:underline">
-                            {t("signUp.termsLink")}
-                        </a>{" "}
-                        {t("signUp.and")}{" "}
-                        <a href="#" className="text-primary hover:underline">
-                            {t("signUp.privacyPolicy")}
-                        </a>
-                        .
-                    </p>
-                </div>
-
-                <div className="relative">
-                    <div className="absolute inset-0 flex items-center">
-                        <div className="w-full border-t border-border"></div>
                     </div>
-                    <div className="relative flex justify-center text-xs uppercase">
-                        <span className="bg-card px-2 text-muted-foreground">
-                            {t("signUp.alreadyRegistered")}
-                        </span>
-                    </div>
-                </div>
-
-                <div className="mt-4">
-                    <Button asChild variant="outline" className="w-full">
-                        <Link href={`/${lang}/sign-in`}>
-                            {t("signUp.signInLink")}
-                        </Link>
-                    </Button>
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import '@/app/style.css';
 import { NextIntlClientProvider } from "next-intl";
 import { useEffect, useState } from "react";
 

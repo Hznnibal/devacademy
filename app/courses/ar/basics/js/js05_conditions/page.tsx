@@ -403,11 +403,11 @@ if (answer == "yes") {
                 <CodeBlock code={`(condition) ? instruction1 : instruction2`} />
                 <p className="text-lg leading-relaxed mb-4">
                     كيفية عمله:
-                    <ul>
-                        <li>إذا كانت الحالة داخل الأقواس صحيحة، يتم تنفيذ <code>instruction1</code>.</li>
-                        <li>إذا كانت الحالة غير صحيحة، يتم تنفيذ <code>instruction2</code>.</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li>إذا كانت الحالة داخل الأقواس صحيحة، يتم تنفيذ <code>instruction1</code>.</li>
+                    <li>إذا كانت الحالة غير صحيحة، يتم تنفيذ <code>instruction2</code>.</li>
+                </ul>
                 <p className="text-lg leading-relaxed mb-4">
                     مثال:
                 </p>

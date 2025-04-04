@@ -42,7 +42,7 @@ export default function Page() {
                         return (
                             <Card
                                 key={plan.key}
-                                className={`relative flex flex-col rounded-2xl p-8 shadow-lg bg-card ${plan.popular
+                                className={`relative flex flex-col rounded-2xl p-8 shadow-lg ${plan.popular
                                     ? "border-2 border-primary scale-105 z-10"
                                     : "border border-border"
                                     }`}

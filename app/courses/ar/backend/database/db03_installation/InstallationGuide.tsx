@@ -33,7 +33,7 @@ export function InstallationGuideMariaDB() {
                                 <li>اتبع معالج التثبيت</li>
                                 <li>قم بتعيين كلمة مرور الجذر أثناء التثبيت</li>
                                 <Image
-                                    src="\DATABASE\Password-MariaDB.png"
+                                    src="/DATABASE/Password-MariaDB.png"
                                     alt="لقطة شاشة لإعداد كلمة مرور الجذر لـ MariaDB"
                                     className="rounded shadow-md"
                                     width={560}

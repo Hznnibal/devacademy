@@ -14,7 +14,7 @@ const MvcWithSymfony: React.FC = () => {
             <h2 className="text-2xl font-semibold mt-4 mb-2">التقدم:</h2>
             <div className="border-b border-gray-300 mb-6" />
             <h3 className="text-xl font-bold mt-3 mb-2">المرحلة 1:</h3>
-            <p className="text-base mb-4">ابدأ بقراءة هذه المقدمة عن  <Link href="/MVC/symfony/symfony01_intro/mvcarchitecture" className="text-blue-500">معمارية MVC.</Link></p>
+            <p className="text-base mb-4">ابدأ بقراءة هذه المقدمة عن  <Link href="/courses/ar/MVC/symfony/symfony01_intro/mvcarchitecture" className="text-blue-500">معمارية MVC.</Link></p>
 
             <h3 className="text-xl font-bold mt-3 mb-2">المرحلة 2:</h3>
             <h4 className="text-lg font-medium mt-3 mb-2">اكتشاف Symfony:</h4>

@@ -33,7 +33,7 @@ export function InstallationGuideMariaDB() {
                                 <li>Follow the installation wizard</li>
                                 <li>Set a root password during installation</li>
                                 <Image
-                                    src="\DATABASE\Password-MariaDB.png"
+                                    src="/DATABASE/Password-MariaDB.png"
                                     alt="MariaDB root password setup screenshot"
                                     className="rounded shadow-md"
                                     width={560}

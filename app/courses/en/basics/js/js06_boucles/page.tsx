@@ -1,5 +1,4 @@
 import { CodeBlock } from '@/components/CodeBlock/code-block';
-import Image from 'next/image';
 import React from 'react';
 
 const JS08LoopsPage: React.FC = () => {
@@ -321,7 +320,7 @@ for (var i in tableau) {
           <p className="text-lg leading-relaxed mb-4">
             Example result (output shown in an image):
           </p>
-          <Image className="w-full" src="images/js_07_exercice_1.jpg" alt="Exercise 1 result" />
+          {/* <Image className="w-full" src="images/js_07_exercice_1.jpg" alt="Exercise 1 result" width={560} height={560} /> */} {/* TODO met une bonne image */}
         </div>
 
         {/* Exercise 2 */}

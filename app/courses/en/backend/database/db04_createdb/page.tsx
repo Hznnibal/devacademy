@@ -44,6 +44,7 @@ export default function CreateDatabasePage() {
                                     alt="Screenshot of MariaDB installation"
                                     className="rounded shadow-md"
                                     width={560}
+                                    height={560}
                                 />
                                 <li>Click "Finish." You should now see this page:</li>
                                 <Image
@@ -59,6 +60,7 @@ export default function CreateDatabasePage() {
                                     alt="Screenshot of MariaDB installation"
                                     className="rounded shadow-md"
                                     width={260}
+                                    height={560}
                                 />
                                 <li>Don't forget to refresh to see your database or after any operation.</li>
                                 <Image

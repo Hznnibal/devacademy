@@ -16,7 +16,7 @@ const MvcWithSymfony: React.FC = () => {
             <h3 className="text-xl font-bold mt-3 mb-2">Phase 1:</h3>
             <p className="text-base mb-4">
                 Start by reading this introduction to{" "}
-                <Link href="/MVC/symfony/symfony01_intro/mvcarchitecture" className="text-blue-500">
+                <Link href="/courses/en/MVC/symfony/symfony01_intro/mvcarchitecture" className="text-blue-500">
                     MVC architecture.
                 </Link>
             </p>

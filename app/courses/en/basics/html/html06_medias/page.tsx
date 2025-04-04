@@ -38,7 +38,7 @@ const Page: React.FC = () => {
                 </p>
 
                 <h3 className="text-xl font-semibold mb-4">Image Example</h3>
-                <Image src="https://www.example.com/logo_windows.jpg" alt="Alternative text for the image" title="Image Title" className="w-full max-w-md mx-auto mb-4" />
+                <Image src="/logo_windows.webp" alt="Alternative text for the image" title="Image Title" className="w-full max-w-md mx-auto mb-4" width={560} height={560} />
             </section >
             <section className="mb-6">
                 <h2 className="text-2xl font-semibold mb-2">Other Media</h2> <div className="border-b border-gray-300 mb-6" />

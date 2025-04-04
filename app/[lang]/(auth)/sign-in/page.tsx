@@ -20,7 +20,7 @@ export default function LoginPage() {
 
     return (
         <div className="min-h-screen bg-background flex items-center justify-center p-4">
-            <div className="w-full max-w-sm space-y-6">
+            <div className=" bg-card p-8 space-y-6 rounded-lg shadow-lg">
 
                 <div className="space-y-2 text-center">
                     <h1 className="text-2xl font-bold">{t("login.title")}</h1>
