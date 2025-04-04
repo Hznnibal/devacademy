@@ -13,18 +13,17 @@
   position: absolute;
   inset: 0;
   background: url("/dark-grid.svg");
-  opacity: 0.25; /* Opacité augmentée pour une texture plus marquée mais douce */
+  opacity: 0.25;
   background-position: center;
   mask-image: linear-gradient(180deg, white, rgba(255, 255, 255, 0));
   -webkit-mask-image: linear-gradient(180deg, white, rgba(255, 255, 255, 0));
-  pointer-events: none; /* Pour éviter d'interagir avec ce calque */
-  z-index: -1; /* Placé en arrière-plan */
+  pointer-events: none;
+  z-index: -1;
 }
 
 .light {
   background: radial-gradient(ellipse at top, #ffffff, #e2e0f7, #ffffff);
   color: #333;
-  /* Arrière-plan lumineux et frais pour stimuler l'attention */
   position: relative;
 }
 
@@ -33,7 +32,7 @@
   position: absolute;
   inset: 0;
   background: url("/light-grid.svg");
-  opacity: 0.1; /* Réduction de l'opacité pour garder la légèreté tout en ajoutant une texture */
+  opacity: 0.1;
   background-position: center;
   mask-image: linear-gradient(
     180deg,
@@ -49,37 +48,32 @@
   z-index: -1;
 }
 
-/* Style global pour les éléments `pre` */
 pre {
-  background-color: #2e2e2e; /* Fond gris foncé en mode sombre pour éviter l'éblouissement */
-  color: #f4f4f4; /* Texte clair qui contraste bien avec le fond sombre */
+  background-color: #2e2e2e;
+  color: #f4f4f4;
   padding: 1rem;
   border-radius: 0.375rem;
   font-family: "Courier New", monospace;
   border: 1px solid #444;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour un effet moderne */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles spécifiques pour `pre` en mode sombre */
 .dark pre {
-  background-color: #232323; /* Fond gris très foncé pour une meilleure lisibilité */
-  color: #e1e1e1; /* Texte clair avec une teinte douce */
+  background-color: #232323;
+  color: #e1e1e1;
 }
 
-/* Styles spécifiques pour `pre` en mode clair */
 .light pre {
-  background-color: #ffffff; /* Fond blanc pour plus de clarté en mode clair */
-  color: #333; /* Texte plus sombre pour mieux contraster avec le fond */
-  border: 1px solid #ccc; /* Légère bordure grise pour séparer du fond */
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ccc;
 }
 
-/* Ajout d'un effet de survol sur les cartes */
 .card:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
 }
 
-/* Ajout d'ombres et de bordures colorées sur les cartes pour attirer l'attention */
 .card {
   background-color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -89,5 +83,5 @@ pre {
 
 .card:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  border: 1px solid #4f6c94; /* Bordure colorée et légère pour les survols */
+  border: 1px solid #4f6c94;
 }

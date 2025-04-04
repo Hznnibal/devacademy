@@ -1,5 +1,3 @@
-import "@/app/globals.css";
-import '@/app/stylemain.css';
 import { MainLayout } from "@/components/layout/main-layout";
 import UserButton from "@/lib/authentication/user-button";
 import { SessionProvider } from "next-auth/react";

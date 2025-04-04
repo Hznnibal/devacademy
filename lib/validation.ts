@@ -1,6 +1,5 @@
 import { z } from "zod";
 
-// Fonction qui crée le schéma Zod avec des traductions dynamiques
 export const SignUpSchema = (t: any) =>
   z
     .object({

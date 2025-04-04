@@ -1,3 +1,4 @@
+import '@/app/style.css';
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp, Lock, Menu, X } from "lucide-react";
 import { useSession } from "next-auth/react";

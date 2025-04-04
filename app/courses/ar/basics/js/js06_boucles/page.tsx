@@ -326,9 +326,15 @@ for (var i in tableau) {
             أنشئ صفحة HTML تطلب من المستخدم إدخال اسم أول. يجب أن تستمر الصفحة في طلب أسماء أولية حتى يترك المستخدم الحقل فارغًا. وأخيرًا، تعرض الصفحة عدد الأسماء المدخلة والأسماء في وحدة التحكم.
           </p>
           <p className="text-lg leading-relaxed mb-4">
-            مثال على النتيجة (يتم عرض الناتج في صورة):
+            مثال على النتيجة:
           </p>
-          {/* <Image className="w-full" src="images/js_07_exercice_1.jpg" alt="Exercise 1 result" width={560} height={560} /> */} {/* TODO met une bonne image */}
+          <video
+            src="/Exboucle.mp4"
+            width={460}
+            controls
+          >
+            Your browser does not support the video tag.
+          </video>
         </div>
 
         {/* التمرين 2 */}

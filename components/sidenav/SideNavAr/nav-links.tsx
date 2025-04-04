@@ -1,5 +1,5 @@
 import { BookOpen, Cpu, Database, Layout, Shield, Terminal } from "lucide-react";
-import { NavItem } from "./types";
+import { NavItem } from "../types";
 
 export const navigationItems: NavItem[] = [
   {

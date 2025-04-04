@@ -32,7 +32,6 @@ export default async function UserButton() {
                             />
                         )}
                         <AvatarFallback className="bg-primary/5">
-                            {/* Remplacer ? par un emoji ou lettre */}
                             {session?.user?.name
                                 ? session.user.name.charAt(0).toUpperCase()
                                 : <User className="h-6 w-6" />}

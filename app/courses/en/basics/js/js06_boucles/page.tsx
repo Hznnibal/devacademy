@@ -318,9 +318,15 @@ for (var i in tableau) {
             Create an HTML page that asks the user for a first name. The page should continue asking for first names until the user leaves the field empty. Finally, the page displays the number of first names and the names entered in the console.
           </p>
           <p className="text-lg leading-relaxed mb-4">
-            Example result (output shown in an image):
+            Example result :
           </p>
-          {/* <Image className="w-full" src="images/js_07_exercice_1.jpg" alt="Exercise 1 result" width={560} height={560} /> */} {/* TODO met une bonne image */}
+          <video
+            src="/Exboucle.mp4"
+            width={460}
+            controls
+          >
+            Your browser does not support the video tag.
+          </video>
         </div>
 
         {/* Exercise 2 */}

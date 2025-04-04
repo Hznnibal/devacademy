@@ -1,3 +1,4 @@
+import '@/app/style.css';
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp, Lock, Menu, X } from "lucide-react";
 import { useSession } from "next-auth/react";
@@ -5,7 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navigationItems } from "./nav-links";
-import './style.css';
 
 interface NavItem {
   title: string;
