@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Barmajah Academy',
     description: 'Complete Training to Become a Professional Web Developer',
     icons: {
-        icon: "/barmajahicon.png",
+        icon: "/Barmajah-Academy-icon.png",
     },
 };
 
