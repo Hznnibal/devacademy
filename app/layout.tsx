@@ -11,13 +11,20 @@ export const metadata: Metadata = {
     description:
         'Learn web development in Arabic and English with Barmajah Academy. Courses on HTML, CSS, JavaScript, PHP, SQL, Symfony, and more.',
     keywords: [
-        'learn web',
+        'learn web development',
         'web development course',
         'learn HTML CSS JavaScript',
         'developer course',
         'formation développeur web',
         'apprendre le développement web',
-        'Barmajah Academy'
+        'تعلم تطوير الويب',
+        'دورة برمجة',
+        'كورس برمجة',
+        'Barmajah Academy',
+        'apprendre à coder',
+        'become a fullstack developer',
+        'online coding course',
+        'coding for beginners'
     ],
     openGraph: {
         title: 'Barmajah Academy – Learn Web Development',
@@ -39,6 +46,7 @@ export const metadata: Metadata = {
         icon: '/Barmajah-Academy-icon.png',
     },
 };
+
 
 export default async function RootLayout({
     children,
