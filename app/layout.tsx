@@ -7,10 +7,36 @@ import './stylemain.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'Barmajah Academy',
-    description: 'Complete Training to Become a Professional Web Developer',
+    title: 'Learn Web Development | Barmajah Academy',
+    description:
+        'Learn web development in Arabic and English with Barmajah Academy. Courses on HTML, CSS, JavaScript, PHP, SQL, Symfony, and more.',
+    keywords: [
+        'learn web',
+        'web development course',
+        'learn HTML CSS JavaScript',
+        'developer course',
+        'formation développeur web',
+        'apprendre le développement web',
+        'Barmajah Academy'
+    ],
+    openGraph: {
+        title: 'Barmajah Academy – Learn Web Development',
+        description: 'Online courses to become a fullstack developer in Arabic and English.',
+        url: 'https://barmajah-academy.com',
+        siteName: 'Barmajah Academy',
+        images: [
+            {
+                url: '/Barmajah-Academy-icon.png',
+                width: 800,
+                height: 600,
+                alt: 'Barmajah Academy Logo',
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
     icons: {
-        icon: "/Barmajah-Academy-icon.png",
+        icon: '/Barmajah-Academy-icon.png',
     },
 };
 
