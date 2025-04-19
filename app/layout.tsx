@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         'developer course',
         'formation développeur web',
         'apprendre le développement web',
-        'تعلم تطوير الويب',
+        'تعلم تطوير الويب  ',
         'دورة برمجة',
         'كورس برمجة',
         'Barmajah Academy',
@@ -63,4 +63,3 @@ export default async function RootLayout({
         </SessionProvider>
     );
 }
-

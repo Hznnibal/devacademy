@@ -1,6 +1,6 @@
 "use client";
 
-import '@/app/style.css';
+import '@/app/globals.css';
 import { NextIntlClientProvider } from "next-intl";
 import { useEffect, useState } from "react";
 
@@ -63,7 +63,7 @@ export default function AppLayout({
 
     return (
         <NextIntlClientProvider locale={lang} messages={messages}>
-            <div className="min-h-screen bg-background">
+            <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className={`min-h-screen bg-background ${lang === 'ar' ? 'font-ar' : 'font-en'}`}>
                 {children}
             </div>
         </NextIntlClientProvider>

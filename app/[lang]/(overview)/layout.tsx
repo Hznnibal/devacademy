@@ -1,6 +1,5 @@
 import { LayoutMain } from "@/components/layout/root-layout";
 import UserButton from "@/lib/authentication/user-button";
-import { SessionProvider } from "next-auth/react";
 
 export default function RootLayout({
     children,
@@ -8,13 +7,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <SessionProvider>
+        <>
             <div className="fixed bottom-4 left-4 z-50 transition-transform hover:scale-110">
                 <UserButton />
             </div>
             <LayoutMain >
                 {children}
             </LayoutMain>
-        </SessionProvider>
+        </>
     );
 }
